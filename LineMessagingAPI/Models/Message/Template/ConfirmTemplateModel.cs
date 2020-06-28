@@ -9,7 +9,7 @@ namespace LineMessagingAPI.Models.Message.Template
     public class ConfirmTemplateModel : TemplateModel
     {
         /// <summary>
-        /// [必填] 固定為 confirm
+        /// [Required] confirm
         /// </summary>
         public string type
         {
@@ -20,13 +20,13 @@ namespace LineMessagingAPI.Models.Message.Template
         }
 
         /// <summary>
-        /// [必填] Message text
+        /// [Required] Message text
         /// Max: 240 characters
         /// </summary>
         public string text { get; set; }
 
         /// <summary>
-        /// [必填] Action when tapped
+        /// [Required] Action when tapped
         /// Set 2 actions for the 2 buttons
         /// </summary>
         public List<ActionModel> actions { get; set; }

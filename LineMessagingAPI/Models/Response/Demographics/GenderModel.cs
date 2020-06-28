@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Response.Demographic
 {
+    /// <summary>
+    /// Percentage per gender
+    /// </summary>
     public class GenderModel
     {
         /// <summary>

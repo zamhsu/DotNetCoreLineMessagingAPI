@@ -3,7 +3,7 @@ using System.Collections.Generic;
 namespace LineMessagingAPI.Models.Response.InteractionStatistics
 {
     /// <summary>
-    /// 
+    /// User interaction statistics response object
     /// </summary>
     public class UserInteractionStatisticsResponseModel
     {

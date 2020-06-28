@@ -13,7 +13,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
     public class ImageModel : FlexComponentModel
     {
         /// <summary>
-        /// [必填] 固定為 image
+        /// [Required] image
         /// </summary>
         public string type
         {
@@ -24,7 +24,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         }
 
         /// <summary>
-        /// [必填] Image URL
+        /// [Required] Image URL
         ///        Protocol: HTTPS
         ///        Image format: JPEG or PNG
         ///        Maximum image size: 1024×1024 pixels
@@ -34,17 +34,17 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         //public Uri url { get; set; }
 
         /// <summary>
-        /// [選填] The ratio of the width or height of this component within the parent box.
+        /// [Optional] The ratio of the width or height of this component within the parent box.
         /// </summary>
         public int? flex { get; set; }
 
         /// <summary>
-        /// [選填] Minimum space between this component and the previous component in the parent element.
+        /// [Optional] Minimum space between this component and the previous component in the parent element.
         /// </summary>
         public FlexMarginSize? margin { get; set; }
 
         /// <summary>
-        /// [選填] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
+        /// [Optional] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
         ///        Specify one of the following values:
         ///        * relative: Use the previous box as reference.
         ///        * absolute: Use the top left of parent element as reference.
@@ -53,37 +53,37 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         public FlexPosition? position { get; set; }
 
         /// <summary>
-        /// [選填] The top offset. 
+        /// [Optional] The top offset. 
         /// </summary>
         public string offsetTop { get; set; }
 
         /// <summary>
-        /// [選填] The bottom offset.
+        /// [Optional] The bottom offset.
         /// </summary>
         public string offsetBottom { get; set; }
 
         /// <summary>
-        /// [選填] The left offset.
+        /// [Optional] The left offset.
         /// </summary>
         public string offsetStart { get; set; }
 
         /// <summary>
-        /// [選填] The right offset.
+        /// [Optional] The right offset.
         /// </summary>
         public string offsetEnd { get; set; }
 
         /// <summary>
-        /// [選填] Alignment style in horizontal direction.
+        /// [Optional] Alignment style in horizontal direction.
         /// </summary>
         public FlexAlign? align { get; set; }
 
         /// <summary>
-        /// [選填] Alignment style in vertical direction.
+        /// [Optional] Alignment style in vertical direction.
         /// </summary>
         public FlexGravity? gravity { get; set; }
 
         /// <summary>
-        /// [選填] Maximum size of the image width.
+        /// [Optional] Maximum size of the image width.
         ///        You can specify one of the following values: xxs, xs, sm, md, lg, xl, xxl, 3xl, 4xl, 5xl, or full.
         ///        The size increases in the order of listing.
         ///        The default value is md.
@@ -91,7 +91,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         public ImageSize? size { get; set; }
 
         /// <summary>
-        /// [選填] Aspect ratio of the image.
+        /// [Optional] Aspect ratio of the image.
         ///        {width}:{height} format.
         ///        Specify the value of {width} and {height} in the range from 1 to 100000.
         ///        However, you cannot set {height} to a value that is more than three times the value of {width}.
@@ -100,17 +100,17 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         public ImageAspectRatio? aspectRatio { get; set; }
 
         /// <summary>
-        /// [選填] The display style of the image if the aspect ratio of the image and that specified by the aspectRatio property do not match.
+        /// [Optional] The display style of the image if the aspect ratio of the image and that specified by the aspectRatio property do not match.
         /// </summary>
         public ImageAspectMode? aspectMode { get; set; }
 
         /// <summary>
-        /// [選填] Background color of the block. Use a hexadecimal color code. (Example:#RRGGBBAA).
+        /// [Optional] Background color of the block. Use a hexadecimal color code. (Example:#RRGGBBAA).
         /// </summary>
         public string backgroundColor { get; set; }
 
         /// <summary>
-        /// [選填] Models.Action
+        /// [Optional] Models.Action
         ///        Action performed when this image is tapped. Specify an action object. This property is supported on the following versions of LINE.
         ///        LINE for iOS and Android: 8.11.0 and later
         /// </summary>

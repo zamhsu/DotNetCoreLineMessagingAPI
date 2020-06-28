@@ -7,7 +7,7 @@ namespace LineMessagingAPI.Models.Message.Imagemap.Action
     public class ImagemapUriActionModel : ImagemapActionModel
     {
         /// <summary>
-        /// [必填] 固定為 uri
+        /// [Required] uri
         /// </summary>
         public string type
         {
@@ -18,21 +18,21 @@ namespace LineMessagingAPI.Models.Message.Imagemap.Action
         }
 
         /// <summary>
-        /// [選填] Label for the action. Spoken when the accessibility feature is enabled on the client device.
+        /// [Optional] Label for the action. Spoken when the accessibility feature is enabled on the client device.
         /// Max: 50 characters
         /// Supported on LINE 8.2.0 and later for iOS.
         /// </summary>
         public string label { get; set; }
 
         /// <summary>
-        /// [必填] Webpage URL
+        /// [Required] Webpage URL
         /// Max: 1000 characters
         /// The available schemes are http, https, line, and tel. For more information about the LINE URL scheme, see Using the LINE URL scheme.
         /// </summary>
         public string linkUri { get; set; }
 
         /// <summary>
-        /// [必填] Defined tappable area
+        /// [Required] Defined tappable area
         /// </summary>
         public ImagemapAreaModel area { get; set; }
     }

@@ -10,7 +10,7 @@ namespace LineMessagingAPI.Models.Message
     public class FlexMessageModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 flex
+        /// [Required] flex
         /// </summary>
         public string type
         {
@@ -21,13 +21,13 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Alternative text
+        /// [Required] Alternative text
         ///        Max: 400 characters
         /// </summary>
         public string altText { get; set; }
 
         /// <summary>
-        /// [必填] Models.Container
+        /// [Required] Models.Container
         ///        Flex Message container
         /// </summary>
         //public string contents { get; set; }
@@ -41,7 +41,7 @@ namespace LineMessagingAPI.Models.Message
     public class FlexMessageWithJsonModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 flex
+        /// [Required] flex
         /// </summary>
         public string type
         {
@@ -52,13 +52,13 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Alternative text
+        /// [Required] Alternative text
         ///        Max: 400 characters
         /// </summary>
         public string altText { get; set; }
 
         /// <summary>
-        /// [必填] Models.Container
+        /// [Required] Models.Container
         ///        Flex Message container
         /// </summary>
         //public string contents { get; set; }

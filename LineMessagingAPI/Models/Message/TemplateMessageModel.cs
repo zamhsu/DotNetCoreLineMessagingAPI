@@ -8,7 +8,7 @@ namespace LineMessagingAPI.Models.Message
     public class TemplateMessageModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 template
+        /// [Required] template
         /// </summary>
         public string type
         {
@@ -19,13 +19,13 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Alternative text.
+        /// [Required] Alternative text.
         /// Max: 400 characters
         /// </summary>
         public string altText { get; set; }
 
         /// <summary>
-        /// [必填] A Buttons, Confirm, Carousel, or Image Carousel object.
+        /// [Required] A Buttons, Confirm, Carousel, or Image Carousel object.
         /// </summary>
         public TemplateModel template { get; set; }
     }

@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Response.Demographic
 {
+    /// <summary>
+    /// Percentage per area
+    /// </summary>
     public class AreaModel
     {
         /// <summary>

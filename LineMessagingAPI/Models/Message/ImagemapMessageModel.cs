@@ -12,7 +12,7 @@ namespace LineMessagingAPI.Models.Message
     public class ImagemapMessageModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 imagemap
+        /// [Required] imagemap
         /// </summary>
         public string type
         {
@@ -23,7 +23,7 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Base URL of the image
+        /// [Required] Base URL of the image
         /// Max: 1000 characters
         /// HTTPS over TLS 1.2 or later
         /// For more information about supported images in imagemap messages, see How to configure an image.
@@ -31,13 +31,13 @@ namespace LineMessagingAPI.Models.Message
         public string baseUrl { get; set; }
 
         /// <summary>
-        /// [必填] Alternative text
+        /// [Required] Alternative text
         /// Max: 400 characters
         /// </summary>
         public string altText { get; set; }
 
         /// <summary>
-        /// [必填] ImagemapBaseSizeModel
+        /// [Required] ImagemapBaseSizeModel
         /// </summary>
         public ImagemapBaseSizeModel baseSize { get; set; }
 
@@ -48,7 +48,7 @@ namespace LineMessagingAPI.Models.Message
         public ImagemapVideoModel video { get; set; }
 
         /// <summary>
-        /// [必填] Action when tapped
+        /// [Required] Action when tapped
         /// Max: 50
         /// </summary>
         public List<ImagemapActionModel> actions { get; set; }

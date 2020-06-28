@@ -11,7 +11,7 @@ namespace LineMessagingAPI.Models.Action
     public class DatetimePickerActionModel : ActionModel
     {
         /// <summary>
-        /// [必填] 固定為 datetimepicker
+        /// [Required] 固定為 datetimepicker
         /// </summary>
         public string type
         {
@@ -31,13 +31,13 @@ namespace LineMessagingAPI.Models.Action
         public string label { get; set; }
 
         /// <summary>
-        /// [必填] String returned via webhook in the postback.data property of the postback event
+        /// [Required] String returned via webhook in the postback.data property of the postback event
         ///        Max: 300 characters
         /// </summary>
         public string data { get; set; }
 
         /// <summary>
-        /// [必填] Action mode
+        /// [Required] Action mode
         ///         * date: Pick date (full-date[max: 2100-12-31, min: 1900-01-01] ex. 2017-06-18)
         ///         * time: Pick time (time-hour:time-minute[max: 23:59, min: 00:00] ex. 06:19)
         ///         * datetime: Pick date and time (full-dateTtime-hour:time-minute or full-datettime-hour:time-minute[max: 2100-12-31T23:59, min: 1900-01-01T00:00] ex. 2017-06-18T06:15/2017-06-18t06:15)
@@ -45,28 +45,40 @@ namespace LineMessagingAPI.Models.Action
         public DatetimePickerActionMode mode { get; set; }
 
         /// <summary>
-        /// [選填] Initial value of date or time.
+        /// [Optional] Initial value of date or time.
         /// </summary>
         public string initial { get; set; }
 
         /// <summary>
-        /// [選填] Largest date or time value that can be selected. Must be greater than the min value.
+        /// [Optional] Largest date or time value that can be selected. Must be greater than the min value.
         /// </summary>
         public string max { get; set; }
 
         /// <summary>
-        /// [選填] Smallest date or time value that can be selected. Must be less than the max value.s
+        /// [Optional] Smallest date or time value that can be selected. Must be less than the max value.s
         /// </summary>
         public string min { get; set; }
     }
 
+    /// <summary>
+    /// Datetime Picker Action Mode
+    /// </summary>
     [JsonConverter(typeof(StringEnumConverter))]
     public enum DatetimePickerActionMode
     {
+        /// <summary>
+        /// date
+        /// </summary>
         [EnumMember(Value = "date")]
         date,
+        /// <summary>
+        /// time
+        /// </summary>
         [EnumMember(Value = "time")]
         time,
+        /// <summary>
+        /// datetime
+        /// </summary>
         [EnumMember(Value = "datetime")]
         datetime
     }

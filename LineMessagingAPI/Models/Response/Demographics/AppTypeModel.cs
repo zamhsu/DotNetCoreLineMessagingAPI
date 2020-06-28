@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Response.Demographic
 {
+    /// <summary>
+    /// Percentage by OS
+    /// </summary>
     public class AppTypeModel
     {
         /// <summary>

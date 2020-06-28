@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Response.Demographic
 {
+    /// <summary>
+    /// Percentage per friendship duration
+    /// </summary>
     public class SubscriptionPeriodModel
     {
         /// <summary>

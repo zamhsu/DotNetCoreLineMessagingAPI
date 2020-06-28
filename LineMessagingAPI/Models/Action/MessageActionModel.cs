@@ -6,7 +6,7 @@ namespace LineMessagingAPI.Models.Action
     public class MessageActionModel : ActionModel
     {
         /// <summary>
-        /// [必填] 固定為 message
+        /// [Required] 固定為 message
         /// </summary>
         public string type
         {
@@ -27,8 +27,8 @@ namespace LineMessagingAPI.Models.Action
         public string label { get; set; }
 
         /// <summary>
-        /// [必填] Text sent when the action is performed.
-        ///        Max: 300 characters
+        /// [Required] Text sent when the action is performed.
+        ///            Max: 300 characters
         /// </summary>
         public string text { get; set; }
     }

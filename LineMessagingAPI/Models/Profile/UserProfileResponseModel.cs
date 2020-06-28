@@ -3,7 +3,7 @@ using System;
 namespace LineMessagingAPI.Models.Profile
 {
     /// <summary>
-    /// 使用者個人資料
+    /// User's profile response obkect
     /// </summary>
     public class UserProfileResponseModel
     {

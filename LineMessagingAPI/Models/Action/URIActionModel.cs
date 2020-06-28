@@ -6,7 +6,7 @@ namespace LineMessagingAPI.Models.Action
     public class URIActionModel : ActionModel
     {
         /// <summary>
-        /// [必填] 固定為 uri
+        /// [Required] uri
         /// </summary>
         public string type
         {
@@ -26,23 +26,31 @@ namespace LineMessagingAPI.Models.Action
         public string label { get; set; }
 
         /// <summary>
-        /// [必填] URI opened when the action is performed (Max: 1000 characters)
-        ///        The available schemes are http, https, line, and tel.
+        /// [Required] URI opened when the action is performed (Max: 1000 characters)
+        ///            The available schemes are http, https, line, and tel.
         /// </summary>
         public string uri { get; set; }
 
         /// <summary>
-        /// [選填] URI opened on LINE for macOS and Windows when the action is performed (Max: 1000 characters)
-        ///        If the altUri.desktop property is set, the uri property is ignored on LINE for macOS and Windows.
-        ///        The available schemes are http, https, line, and tel. For more information about the LINE URL scheme, see Using the LINE URL scheme. This property is supported on the following version of LINE.
-        ///        LINE 5.12.0 or later for macOS and Windows
-        ///        Note: The altUri.desktop property is supported only when you set URI actions in Flex Messages.
+        /// [Optional] URI opened on LINE for macOS and Windows when the action is performed (Max: 1000 characters)
+        ///            If the altUri.desktop property is set, the uri property is ignored on LINE for macOS and Windows.
+        ///            The available schemes are http, https, line, and tel. For more information about the LINE URL scheme, see Using the LINE URL scheme. This property is supported on the following version of LINE.
+        ///            LINE 5.12.0 or later for macOS and Windows
+        ///            Note: The altUri.desktop property is supported only when you set URI actions in Flex Messages.
         /// </summary>
         public AltUri altUri { get; set; }
     }
 
+    /// <summary>
+    /// URI opened on LINE for macOS and Windows when the action is performed (Max character limit: 1000)
+    /// </summary>
     public class AltUri
     {
+        /// <summary>
+        /// The available schemes are http, https, line, and tel.
+        /// For more information about the LINE URL scheme, see Using LINE features with the LINE URL scheme.
+        /// (https://developers.line.biz/zh-hant/docs/messaging-api/using-line-url-scheme/)
+        /// </summary>
         public string desktop { get; set; }
     }
 }

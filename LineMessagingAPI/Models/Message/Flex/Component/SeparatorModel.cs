@@ -9,7 +9,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
     public class SeparatorModel : FlexComponentModel
     {
         /// <summary>
-        /// [必填] 固定為 separator
+        /// [Required] separator
         /// </summary>
         public string type
         {
@@ -20,12 +20,12 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         }
 
         /// <summary>
-        /// [選填] Minimum space between this component and the previous component in the parent element.
+        /// [Optional] Minimum space between this component and the previous component in the parent element.
         /// </summary>
         public FlexMarginSize? margin { get; set; }
 
         /// <summary>
-        /// [選填] Font color. Use a hexadecimal color code.
+        /// [Optional] Font color. Use a hexadecimal color code.
         /// </summary>
         public string color { get; set; }
     }

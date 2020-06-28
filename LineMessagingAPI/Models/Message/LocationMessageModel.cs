@@ -3,7 +3,7 @@ namespace LineMessagingAPI.Models.Message
     public class LocationMessageModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 location
+        /// [Required] location
         /// </summary>
         public string type
         {
@@ -14,24 +14,24 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Title
+        /// [Required] Title
         /// Max: 100 characters
         /// </summary>
         public string title { get; set; }
 
         /// <summary>
-        /// [必填] Address
+        /// [Required] Address
         /// Max: 100 characters
         /// </summary>
         public string address { get; set; }
 
         /// <summary>
-        /// [必填] Latitude
+        /// [Required] Latitude
         /// </summary>
         public double latitude { get; set; }
 
         /// <summary>
-        /// [必填] Longitude
+        /// [Required] Longitude
         /// </summary>
         public double longtitude { get; set; }
     }

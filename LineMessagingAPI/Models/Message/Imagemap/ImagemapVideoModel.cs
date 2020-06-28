@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Message.Imagemap
 {
+    /// <summary>
+    /// Imagemap video object
+    /// </summary>
     public class ImagemapVideoModel
     {
         /// <summary>
@@ -21,8 +24,14 @@ namespace LineMessagingAPI.Models.Message.Imagemap
         /// </summary>
         public string previewImageUrl { get; set; }
 
+        /// <summary>
+        /// Video area.
+        /// </summary>
         public ImagemapAreaModel area { get; set; }
 
+        /// <summary>
+        /// External link.
+        /// </summary>
         public ImagemapExternalLinkModel externalLink { get; set; }
     }
 }

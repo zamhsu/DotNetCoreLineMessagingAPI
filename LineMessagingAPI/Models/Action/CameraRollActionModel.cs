@@ -7,7 +7,7 @@ namespace LineMessagingAPI.Models.Action
     public class CameraRollActionModel : ActionModel
     {
         /// <summary>
-        /// [必填] 固定為 cameraRoll
+        /// [Required] cameraRoll
         /// </summary>
         public string type
         {
@@ -18,8 +18,8 @@ namespace LineMessagingAPI.Models.Action
         }
 
         /// <summary>
-        /// [必填] Label for the action.
-        ///        Max: 20 characters
+        /// [Required] Label for the action.
+        ///            Max: 20 characters
         /// </summary>
         public string label { get; set; }
     }

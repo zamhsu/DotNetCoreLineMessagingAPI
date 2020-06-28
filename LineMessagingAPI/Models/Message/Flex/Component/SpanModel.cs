@@ -10,7 +10,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
     public class SpanModel : FlexComponentModel
     {
         /// <summary>
-        /// [必填] 固定為 span
+        /// [Required] span
         /// </summary>
         public string type
         {
@@ -21,17 +21,17 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         }
 
         /// <summary>
-        /// [必填] Text. If the wrap property of the parent text is set to true, you can use a new line character (\n) to begin on a new line.
+        /// [Required] Text. If the wrap property of the parent text is set to true, you can use a new line character (\n) to begin on a new line.
         /// </summary>
         public string text { get; set; }
 
         /// <summary>
-        /// [選填] Font color. Use a hexadecimal color code.
+        /// [Optional] Font color. Use a hexadecimal color code.
         /// </summary>
         public string color { get; set; }
 
         /// <summary>
-        /// [選填] Font size.
+        /// [Optional] Font size.
         ///        You can specify one of the following values: xxs, xs, sm, md, lg, xl, xxl, 3xl, 4xl, or 5xl.
         ///        The size increases in the order of listing.
         ///        The default value is md.
@@ -39,13 +39,13 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         public FlexFontSize? size { get; set; }
 
         /// <summary>
-        /// [選填] Font weight. You can specify one of the following values: regular or bold.
+        /// [Optional] Font weight. You can specify one of the following values: regular or bold.
         ///        Specifying bold makes the font bold. The default value is regular.
         /// </summary>
         public TextWeight? weight { get; set; }
 
         /// <summary>
-        /// [選填] Style of the text. Specify one of the following values:
+        /// [Optional] Style of the text. Specify one of the following values:
         ///         * normal: Normal
         ///         * italic: Italic
         ///        The default value is normal.
@@ -53,7 +53,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         public TextStyle? style { get; set; }
 
         /// <summary>
-        /// [選填] Decoration of the text. Specify one of the following values:
+        /// [Optional] Decoration of the text. Specify one of the following values:
         ///         * none: No decoration
         ///         * underline: Underline
         ///         * line-through: Strikethrough

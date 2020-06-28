@@ -12,7 +12,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
     public class ButtonModel : FlexComponentModel
     {
         /// <summary>
-        /// [必填] 固定為 button
+        /// [Required] button
         /// </summary>
         public string type
         {
@@ -23,23 +23,23 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         }
 
         /// <summary>
-        /// [必填] Models.Action
+        /// [Required] Models.Action
         ///        Action performed when this button is tapped.
         /// </summary>
         public ActionModel action { get; set; }
 
         /// <summary>
-        /// [選填] The ratio of the width or height of this component within the parent box.
+        /// [Optional] The ratio of the width or height of this component within the parent box.
         /// </summary>
         public int? flex { get; set; }
 
         /// <summary>
-        /// [選填] Minimum space between this component and the previous component in the parent element.
+        /// [Optional] Minimum space between this component and the previous component in the parent element.
         /// </summary>
         public FlexMarginSize? margin { get; set; }
 
         /// <summary>
-        /// [選填] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
+        /// [Optional] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
         ///        Specify one of the following values:
         ///        * relative: Use the previous box as reference.
         ///        * absolute: Use the top left of parent element as reference.
@@ -48,32 +48,32 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         public FlexPosition? position { get; set; }
 
         /// <summary>
-        /// [選填] The top offset. 
+        /// [Optional] The top offset. 
         /// </summary>
         public string offsetTop { get; set; }
 
         /// <summary>
-        /// [選填] The bottom offset.
+        /// [Optional] The bottom offset.
         /// </summary>
         public string offsetBottom { get; set; }
 
         /// <summary>
-        /// [選填] The left offset.
+        /// [Optional] The left offset.
         /// </summary>
         public string offsetStart { get; set; }
 
         /// <summary>
-        /// [選填] The right offset.
+        /// [Optional] The right offset.
         /// </summary>
         public string offsetEnd { get; set; }
 
         /// <summary>
-        /// [選填] Height of the button.
+        /// [Optional] Height of the button.
         /// </summary>
         public ButtonHeight? height { get; set; }
 
         /// <summary>
-        /// [選填] Style of the button. Specify one of the following values:
+        /// [Optional] Style of the button. Specify one of the following values:
         ///         * primary: Style for dark color buttons
         ///         * secondary: Style for light color buttons
         ///         * link: HTML link style
@@ -82,14 +82,14 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         public ButtonStyle? style { get; set; }
 
         /// <summary>
-        /// [選填] Character color when the style property is link.
+        /// [Optional] Character color when the style property is link.
         ///        Background color when the style property is primary or secondary.
         ///        Use a hexadecimal color code.
         /// </summary>
         public string color { get; set; }
 
         /// <summary>
-        /// [選填] Alignment style in vertical direction.
+        /// [Optional] Alignment style in vertical direction.
         /// </summary>
         public FlexGravity? gravity { get; set; }
     }

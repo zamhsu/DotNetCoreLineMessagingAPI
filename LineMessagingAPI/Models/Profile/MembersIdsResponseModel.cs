@@ -2,6 +2,9 @@ using System.Collections.Generic;
 
 namespace LineMessagingAPI.Models.Profile
 {
+    /// <summary>
+    /// Member Ids response object
+    /// </summary>
     public class MembersIdsResponseModel
     {
         /// <summary>

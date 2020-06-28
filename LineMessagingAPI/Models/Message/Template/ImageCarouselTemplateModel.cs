@@ -8,7 +8,7 @@ namespace LineMessagingAPI.Models.Message.Template
     public class ImageCarouselTemplateModel : TemplateModel
     {
         /// <summary>
-        /// [必填] 固定為 image_carousel
+        /// [Required] image_carousel
         /// </summary>
         public string type
         {
@@ -19,7 +19,7 @@ namespace LineMessagingAPI.Models.Message.Template
         }
 
         /// <summary>
-        /// [必填] Array of columns
+        /// [Required] Array of columns
         /// Max: 10
         /// </summary>
         public List<ImageCarouselColumnModel> columns { get; set; }

@@ -6,7 +6,7 @@ namespace LineMessagingAPI.Models.Action
     public class PostbackActionModel : ActionModel
     {
         /// <summary>
-        /// [必填] 固定為 postback
+        /// [Required] 固定為 postback
         /// </summary>
         public string type
         {
@@ -27,8 +27,8 @@ namespace LineMessagingAPI.Models.Action
         public string lable { get; set; }
 
         /// <summary>
-        /// [必填] String returned via webhook in the postback.data property of the postback event
-        ///        Max: 300 characters
+        /// [Required] String returned via webhook in the postback.data property of the postback event
+        ///            Max: 300 characters
         /// </summary>
         public string data { get; set; }
 

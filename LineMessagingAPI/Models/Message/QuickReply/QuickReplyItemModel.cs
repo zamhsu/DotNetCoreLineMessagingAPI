@@ -8,7 +8,7 @@ namespace LineMessagingAPI.Models.Message.QuickReply
     public class QuickReplyItemModel
     {
         /// <summary>
-        /// [必填] 固定為 action
+        /// [Required] action
         /// </summary>
         public string type
         {

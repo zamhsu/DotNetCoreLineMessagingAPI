@@ -5,7 +5,7 @@ namespace LineMessagingAPI.Models.Message
     public class TextMessageModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 text
+        /// [Required] text
         /// </summary>
         public string type
         {
@@ -16,7 +16,7 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Message text. You can include the following emoji:
+        /// [Required] Message text. You can include the following emoji:
         ///         * Unicode emoji
         ///         * LINE original emoji (Unicode code point table for LINE original emoji)
         ///        Max: 2000 characters
@@ -24,7 +24,7 @@ namespace LineMessagingAPI.Models.Message
         public string text { get; set; }
 
         /// <summary>
-        /// [選填] Quick reply.
+        /// [Optional] Quick reply.
         /// </summary>
         /// <value></value>
         public QuickReplyModel quickReply { get; set; }

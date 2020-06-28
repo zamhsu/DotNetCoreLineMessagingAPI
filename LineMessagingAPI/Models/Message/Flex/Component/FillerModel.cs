@@ -7,7 +7,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
     public class FillerModel : FlexComponentModel
     {
         /// <summary>
-        /// [必填] 固定為 filler
+        /// [Required] filler
         /// </summary>
         public string type
         {
@@ -18,7 +18,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Component
         }
 
         /// <summary>
-        /// [選填] The ratio of the width or height of this component within the parent box.
+        /// [Optional] The ratio of the width or height of this component within the parent box.
         /// </summary>
         public int? flex { get; set; }
     }

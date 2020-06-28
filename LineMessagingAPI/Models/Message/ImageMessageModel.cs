@@ -3,7 +3,7 @@ namespace LineMessagingAPI.Models.Message
     public class ImageMessageModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 image
+        /// [Required] image
         /// </summary>
         public string type
         {
@@ -14,7 +14,7 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Image URL (Max: 1000 characters)
+        /// [Required] Image URL (Max: 1000 characters)
         /// HTTPS over TLS 1.2 or later
         /// JPEG
         /// Max: 4096 x 4096
@@ -23,7 +23,7 @@ namespace LineMessagingAPI.Models.Message
         public string originalContentUrl { get; set; }
 
         /// <summary>
-        /// [必填] Preview image URL (Max: 1000 characters)
+        /// [Required] Preview image URL (Max: 1000 characters)
         /// HTTPS over TLS 1.2 or later
         /// JPEG
         /// Max: 240 x 240

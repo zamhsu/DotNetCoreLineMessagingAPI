@@ -7,6 +7,9 @@ namespace LineMessagingAPI.Models.Message.QuickReply
     /// </summary>
     public class QuickReplyModel
     {
+        /// <summary>
+        /// [Required] Quick reply button objects. Max: 13 objects
+        /// </summary>
         public List<QuickReplyItemModel> items { get; set; }
     }
 }

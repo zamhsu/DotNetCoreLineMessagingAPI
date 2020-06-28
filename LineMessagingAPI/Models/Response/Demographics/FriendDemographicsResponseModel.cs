@@ -3,10 +3,13 @@ using System.Collections.Generic;
 namespace LineMessagingAPI.Models.Response.Demographic
 {
     /// <summary>
-    /// 好友統計資料
+    /// Friend demographics response object
     /// </summary>
     public class FriendDemographicsResponseModel
     {
+        /// <summary>
+        /// true if friend demographic information is available.
+        /// </summary>
         public bool available { get; set; }
 
         /// <summary>

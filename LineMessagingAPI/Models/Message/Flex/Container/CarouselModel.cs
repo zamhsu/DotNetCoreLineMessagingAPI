@@ -9,7 +9,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Container
     public class CarouselModel : FlexContainerModel
     {
         /// <summary>
-        /// [必填] 固定為 carousel
+        /// [Required] carousel
         /// </summary>
         public string type
         {
@@ -20,7 +20,7 @@ namespace LineMessagingAPI.Models.Message.Flex.Container
         }
 
         /// <summary>
-        /// [必填] Bubbles in the carousel. Max: 10 bubbles
+        /// [Required] Bubbles in the carousel. Max: 10 bubbles
         /// </summary>
         public List<BubbleModel> contents { get; set; }
     }

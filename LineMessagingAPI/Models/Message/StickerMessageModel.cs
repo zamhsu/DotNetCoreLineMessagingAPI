@@ -3,7 +3,7 @@ namespace LineMessagingAPI.Models.Message
     public class StickerMessageModel : MessageModel
     {
         /// <summary>
-        /// [必填] 固定為 sticker
+        /// [Required] sticker
         /// </summary>
         public string type
         {
@@ -14,12 +14,12 @@ namespace LineMessagingAPI.Models.Message
         }
 
         /// <summary>
-        /// [必填] Package ID for a set of stickers.
+        /// [Required] Package ID for a set of stickers.
         /// </summary>
         public string packageId { get; set; }
 
         /// <summary>
-        /// [必填] Sticker ID.
+        /// [Required] Sticker ID.
         /// </summary>
         public string stickerId { get; set; }
     }

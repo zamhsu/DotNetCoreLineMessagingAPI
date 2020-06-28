@@ -68,7 +68,7 @@ namespace LineMessagingAPI.Models.Event
         public string previewImageUrl { get; set; }
     }
 
-[JsonConverter(typeof(StringEnumConverter))]
+    [JsonConverter(typeof(StringEnumConverter))]
     public enum ContentProviderType
     {
         [EnumMember(Value = "line")]

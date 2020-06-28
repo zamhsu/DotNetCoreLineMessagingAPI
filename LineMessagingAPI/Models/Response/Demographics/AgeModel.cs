@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Response.Demographic
 {
+    /// <summary>
+    /// Percentage per age group
+    /// </summary>
     public class AgeModel
     {
         /// <summary>
