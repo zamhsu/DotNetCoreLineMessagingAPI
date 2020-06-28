@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineMessagingAPI", "LineMessagingAPI\LineMessagingAPI.csproj", "{C7751AC0-8980-4656-8728-5401E213E869}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C7751AC0-8980-4656-8728-5401E213E869}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7751AC0-8980-4656-8728-5401E213E869}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7751AC0-8980-4656-8728-5401E213E869}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7751AC0-8980-4656-8728-5401E213E869}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D20FBA55-348A-4F07-A7AC-7E9D6F7797D8}
+	EndGlobalSection
+EndGlobal

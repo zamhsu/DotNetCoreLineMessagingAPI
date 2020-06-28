@@ -1,0 +1,2325 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>LineMessagingAPI</name>
+    </assembly>
+    <members>
+        <member name="T:LineMessagingAPI.LineMessagingClient">
+            <summary>
+            Line Messaging API 功能
+            </summary>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.ReplyMessageAsync(LineMessagingAPI.Models.ReplyMessageModel,System.String)">
+            <summary>
+            回覆訊息
+            </summary>
+            <param name="replyMessageBody">回覆訊息body資料</param>
+            <param name="accessToken">LINE AccessToken</param>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.ReplyMessageWithJsonAsync(System.String,System.String,System.String)">
+            <summary>
+            回覆訊息(訊息內容使用Json字串，不需messages:[])
+            </summary>
+            <param name="replyToken">ReplyToken</param>
+            <param name="jsonMessages">Json格式的messages內容</param>
+            <param name="accessToken">LINE AccessToken</param>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.PushMessageAsync(LineMessagingAPI.Models.PushMessageModel,System.String)">
+            <summary>
+            推送訊息
+            </summary>
+            <param name="pushMessageBody">推送訊息body資料</param>
+            <param name="accessToken">LINE AccessToken</param>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.MulticastMessageAsync(LineMessagingAPI.Models.MulticastModel,System.String)">
+            <summary>
+            群發訊息
+            </summary>
+            <param name="multicastModel">群發訊息body資料</param>
+            <param name="accessToken">LINE AccessToken</param>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.BroadcastMessageAsync(LineMessagingAPI.Models.BroadcastModel,System.String)">
+            <summary>
+            廣播訊息
+            </summary>
+            <param name="broadcastModel">廣播訊息body資料</param>
+            <param name="accessToken">LINE AccessToken</param>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetTheTargetLimitForAdditionsMessagesAsync(System.String)">
+            <summary>
+            Gets the target limit for additional messages in the current month.
+            The number of messages retrieved by this operation includes the number of messages sent from LINE Official Account Manager.
+            Set a target limit with LINE Official Account Manager. For the procedures, refer to the LINE Official Account Manager manual.
+            Note: LINE@ accounts cannot call this API endpoint.
+            </summary>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>TargetLimitForAdditionalMessagesResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetNumberOfMessagesSentThisMonthAsync(System.String)">
+            <summary>
+            Gets the number of messages sent in the current month.
+            The number of messages retrieved by this operation includes the number of messages sent from LINE Official Account Manager.
+            The number of messages retrieved by this operation is approximate. To get the correct number of sent messages, use LINE Official Account Manager or execute API operations for getting the number of sent messages.
+            Note: LINE@ accounts cannot call this API endpoint.
+            </summary>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>NumberOfMessagesSentThisMonthResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetNumberOfSentReplyMessagesAsync(System.String,System.String)">
+            <summary>
+            Gets the number of messages sent with the /bot/message/reply endpoint.
+            The number of messages retrieved by this operation does not include the number of messages sent from LINE Official Account Manager.
+            </summary>
+            <param name="date">日期(yyyyMMdd)</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>NumberOfSentReplyMessagesResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetNumberOfSentPushMessagesAsync(System.String,System.String)">
+            <summary>
+            Gets the number of messages sent with the /bot/message/push endpoint.
+            The number of messages retrieved by this operation does not include the number of messages sent from LINE Official Account Manager.
+            Note: LINE@ accounts under the free or basic plan cannot call this API endpoint.
+            </summary>
+            <param name="date">日期(yyyyMMdd)</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>NumberOfSentPushMessagesResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetNumberOfSentMulticastMessagesAsync(System.String,System.String)">
+            <summary>
+            Gets the number of messages sent with the /bot/message/multicast endpoint.
+            The number of messages retrieved by this operation does not include the number of messages sent from LINE Official Account Manager.
+            Note: LINE@ accounts under the free or basic plan cannot call this API endpoint.
+            </summary>
+            <param name="date">日期(yyyyMMdd)</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>NumberOfSentMulticastMessagesResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetNumberOfSentBroadcastMessagesAsync(System.String,System.String)">
+            <summary>
+            Gets the number of messages sent with the /bot/message/broadcast endpoint.
+            The number of messages retrieved by this operation does not include the number of messages sent from LINE Official Account Manager.
+            </summary>
+            <param name="date">日期(yyyyMMdd)</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>NumberOfSentBroadcastMessagesResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetNumberOfMessageDeliveriesAsync(System.String,System.String)">
+            <summary>
+            取得特定日期Line官方帳號回傳訊息的數量
+            </summary>
+            <param name="date">日期(yyyyMMdd)</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>NumberOfMessageDeliveriesResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetNumberOfFollowersAsync(System.String,System.String)">
+            <summary>
+            取得特定日期加Line官方帳號為好友的數量
+            </summary>
+            <param name="date">日期(yyyyMMdd)</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>NumberOfFollowersResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetFriendDemographicsAsync(System.String)">
+            <summary>
+            取得好友統計資料
+            </summary>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>FriendDemographicsResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetUserInteractionStatisticsAsync(System.String,System.String)">
+            <summary>
+            取得發送廣播訊息後使用者的動作統計資料(14天內)
+            </summary>
+            <param name="requestId">廣播訊息的Request ID。(為Reponse Header中X-Line-Request-Id的Requert ID)</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>UserInteractionStatisticsResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetProfileAsync(System.String,System.String)">
+            <summary>
+            取得使用者個人資料
+            </summary>
+            <param name="userId">userId</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>UserProfileResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetRoomMemberUserIDsAsync(System.String,System.String)">
+            <summary>
+            [未測試][認證帳號/高級帳號]取得特定聊天室內所有使用者ID
+            </summary>
+            <param name="roomId">roomId</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetRoomMemberProfileAsync(System.String,System.String,System.String)">
+            <summary>
+            [未測試]取得特定聊天室中特定使用者的個人資料
+            </summary>
+            <param name="roomId">roomId</param>
+            <param name="userId">userId</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>UserProfileResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.LeaveRoomAsync(System.String,System.String)">
+            <summary>
+            [未測試]離開特定聊天室
+            </summary>
+            <param name="roomId">roomId</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetGroupMemberUserIDsAsync(System.String,System.String)">
+            <summary>
+            [未測試][認證帳號/高級帳號]取得特定群組所有內使用者ID
+            </summary>
+            <param name="groupId">groupId</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.GetGroupMemberProfileAsync(System.String,System.String,System.String)">
+            <summary>
+            [未測試]取得特定群組中特定使用者的個人資料
+            </summary>
+            <param name="groupId">groupId</param>
+            <param name="userId">userId</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns>UserProfileResponseModel</returns>
+        </member>
+        <member name="M:LineMessagingAPI.LineMessagingClient.LeaveGroupAsync(System.String,System.String)">
+            <summary>
+            [未測試]離開特定群組
+            </summary>
+            <param name="groupId">groupId</param>
+            <param name="accessToken">LINE AccessToken</param>
+            <returns></returns>
+        </member>
+        <member name="T:LineMessagingAPI.MessagingApiUrl">
+            <summary>
+            Line Messaging API Url
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.MessageUrl">
+            <summary>
+            Message相關API(HTTP GET / HTTP POST)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.ReplyUrl">
+            <summary>
+            回覆訊息(HTTP POST)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.PushUrl">
+            <summary>
+            推送訊息(HTTP POST)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.MulticastUrl">
+            <summary>
+            群發訊息(HTTP POST)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.BroadcastUrl">
+            <summary>
+            廣播訊息(HTTP POST)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.MessageContentUrl">
+            <summary>
+            取得訊息內容(HTTP GET)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.InsightUrl">
+            <summary>
+            取得統計資料(HTTP GET)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.ProfileUrl">
+            <summary>
+            取得個人資料(HTTP GET)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.RoomUrl">
+            <summary>
+            取得聊天室資料(HTTP GET)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.MessagingApiUrl.GroupUrl">
+            <summary>
+            取得群組資料(HTTP GET)
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Action.CameraActionModel">
+            <summary>
+            This action can be configured only with quick reply buttons.
+            When a button associated with this action is tapped, the camera screen in LINE is opened.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.CameraActionModel.type">
+            <summary>
+            [必填] 固定為 camera
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.CameraActionModel.label">
+            <summary>
+            [必填] Label for the action.
+                   Max: 20 characters
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Action.CameraRollActionModel">
+            <summary>
+            This action can be configured only with quick reply buttons.
+            When a button associated with this action is tapped, the camera roll screen in LINE is opened.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.CameraRollActionModel.type">
+            <summary>
+            [必填] 固定為 cameraRoll
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.CameraRollActionModel.label">
+            <summary>
+            [必填] Label for the action.
+                   Max: 20 characters
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Action.DatetimePickerActionModel">
+            <summary>
+            When a control associated with this action is tapped, a postback event is returned via webhook with the date and time selected by the user from the date and time selection dialog.
+            The datetime picker action does not support time zones.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.DatetimePickerActionModel.type">
+            <summary>
+            [必填] 固定為 datetimepicker
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.DatetimePickerActionModel.label">
+            <summary>
+            Label for the action
+             * Required for templates other than image carousel. Max: 20 characters.
+             * Optional for image carousel templates. Max: 12 characters.
+             * Optional for rich menus. Spoken when the accessibility feature is enabled on the client device. Max: 20 characters. Supported on LINE 8.2.0 and later for iOS.
+             * Required for the button of Flex Message. This property can be specified for the box, image, and text but its value is not displayed. Max: 20 characters.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.DatetimePickerActionModel.data">
+            <summary>
+            [必填] String returned via webhook in the postback.data property of the postback event
+                   Max: 300 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.DatetimePickerActionModel.mode">
+            <summary>
+            [必填] Action mode
+                    * date: Pick date (full-date[max: 2100-12-31, min: 1900-01-01] ex. 2017-06-18)
+                    * time: Pick time (time-hour:time-minute[max: 23:59, min: 00:00] ex. 06:19)
+                    * datetime: Pick date and time (full-dateTtime-hour:time-minute or full-datettime-hour:time-minute[max: 2100-12-31T23:59, min: 1900-01-01T00:00] ex. 2017-06-18T06:15/2017-06-18t06:15)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.DatetimePickerActionModel.initial">
+            <summary>
+            [選填] Initial value of date or time.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.DatetimePickerActionModel.max">
+            <summary>
+            [選填] Largest date or time value that can be selected. Must be greater than the min value.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.DatetimePickerActionModel.min">
+            <summary>
+            [選填] Smallest date or time value that can be selected. Must be less than the max value.s
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Action.LocationActionModel">
+            <summary>
+            This action can be configured only with quick reply buttons.
+            When a button associated with this action is tapped, the location screen in LINE is opened.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.LocationActionModel.type">
+            <summary>
+            [必填] 固定為 localtion
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.LocationActionModel.label">
+            <summary>
+            [必填] Label for the action.
+                   Max: 20 characters
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Action.MessageActionModel">
+            <summary>
+            When a control associated with this action is tapped, the string in the text property is sent as a message from the user.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.MessageActionModel.type">
+            <summary>
+            [必填] 固定為 message
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.MessageActionModel.label">
+            <summary>
+            Label for the action
+             * Required for templates other than image carousel. Max: 20 characters.
+             * Optional for image carousel templates. Max: 12 characters.
+             * Optional for rich menus. Spoken when the accessibility feature is enabled on the client device. Max: 20 characters. Supported on LINE 8.2.0 and later for iOS.
+             * Required for quick reply buttons. Max: 20 characters. Supported on LINE 8.11.0 and later for iOS and Android.
+             * Required for the button of Flex Message. This property can be specified for the box, image, and text but its value is not displayed. Max: 20 characters.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.MessageActionModel.text">
+            <summary>
+            [必填] Text sent when the action is performed.
+                   Max: 300 characters
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Action.PostbackActionModel">
+            <summary>
+            When a control associated with this action is tapped, a postback event is returned via webhook with the specified string in the data property.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.PostbackActionModel.type">
+            <summary>
+            [必填] 固定為 postback
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.PostbackActionModel.lable">
+            <summary>
+            Label for the action
+             * Required for templates other than image carousel. Max: 20 characters.
+             * Optional for image carousel templates. Max: 12 characters.
+             * Optional for rich menus. Spoken when the accessibility feature is enabled on the client device. Max: 20 characters. Supported on LINE 8.2.0 and later for iOS.
+             * Required for quick reply buttons. Max: 20 characters. Supported on LINE 8.11.0 and later for iOS and Android.
+             * Required for the button of Flex Message. This property can be specified for the box, image, and text but its value is not displayed. Max: 20 characters.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.PostbackActionModel.data">
+            <summary>
+            [必填] String returned via webhook in the postback.data property of the postback event
+                   Max: 300 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.PostbackActionModel.displayText">
+            <summary>
+            Text displayed in the chat as a message sent by the user when the action is performed.
+             * Required for quick reply buttons.
+             * Optional for the other message types.
+            Max: 300 characters
+            The displayText and text properties cannot both be used at the same time.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.PostbackActionModel.text">
+            <summary>
+            Text displayed in the chat as a message sent by the user when the action is performed. Returned from the server through a webhook. This property shouldn't be used with quick reply buttons.
+            Max: 300 characters
+            The displayText and text properties cannot both be used at the same time.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Action.URIActionModel">
+            <summary>
+            When a control associated with this action is tapped, the URI specified in the uri property is opened.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.URIActionModel.type">
+            <summary>
+            [必填] 固定為 uri
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.URIActionModel.label">
+            <summary>
+            Label for the action
+             * Required for templates other than image carousel. Max: 20 characters.
+             * Optional for image carousel templates. Max: 12 characters.
+             * Optional for rich menus. Spoken when the accessibility feature is enabled on the client device. Max: 20 characters. Supported on LINE 8.2.0 and later for iOS.
+             * Required for the button of Flex Message. This property can be specified for the box, image, and text but its value is not displayed. Max: 20 characters.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.URIActionModel.uri">
+            <summary>
+            [必填] URI opened when the action is performed (Max: 1000 characters)
+                   The available schemes are http, https, line, and tel.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Action.URIActionModel.altUri">
+            <summary>
+            [選填] URI opened on LINE for macOS and Windows when the action is performed (Max: 1000 characters)
+                   If the altUri.desktop property is set, the uri property is ignored on LINE for macOS and Windows.
+                   The available schemes are http, https, line, and tel. For more information about the LINE URL scheme, see Using the LINE URL scheme. This property is supported on the following version of LINE.
+                   LINE 5.12.0 or later for macOS and Windows
+                   Note: The altUri.desktop property is supported only when you set URI actions in Flex Messages.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.BroadcastModel.messages">
+            <summary>
+            Model.Message
+            Max: 5
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Event.ReceiveEventModel">
+            <summary>
+            接收到的Event
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Event.EventModel">
+            <summary>
+            Event訊息
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Event.ReceiveMessage">
+            <summary>
+            接收到的訊息
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Event.Source">
+            <summary>
+            訊息來源
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Event.MessageType">
+            <summary>
+            訊息類型
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Event.SourceType">
+            <summary>
+            訊息來源類型
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Event.EventType">
+            <summary>
+            Event 類型
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.AudioMessageModel.type">
+            <summary>
+            [必填] 固定為 audio
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.AudioMessageModel.originalContentUrl">
+            <summary>
+            [必填] URL of audio file (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            m4a
+            Max: 1 minute
+            Max: 10 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.AudioMessageModel.duration">
+            <summary>
+            [必填] Length of audio file (milliseconds)
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.FlexMessageModel">
+            <summary>
+            Flex Messages are messages with a customizable layout.
+            You can customize the layout freely based on the specification for CSS Flexible Box (CSS Flexbox).
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.FlexMessageModel.type">
+            <summary>
+            [必填] 固定為 flex
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.FlexMessageModel.altText">
+            <summary>
+            [必填] Alternative text
+                   Max: 400 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.FlexMessageModel.contents">
+            <summary>
+            [必填] Models.Container
+                   Flex Message container
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.FlexMessageWithJsonModel">
+            <summary>
+            Flex Messages are messages with a customizable layout.
+            You can customize the layout freely based on the specification for CSS Flexible Box (CSS Flexbox).
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.FlexMessageWithJsonModel.type">
+            <summary>
+            [必填] 固定為 flex
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.FlexMessageWithJsonModel.altText">
+            <summary>
+            [必填] Alternative text
+                   Max: 400 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.FlexMessageWithJsonModel.contents">
+            <summary>
+            [必填] Models.Container
+                   Flex Message container
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.BoxModel">
+            <summary>
+            This is a component that defines the layout of child components. You can also include a box in a box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.type">
+            <summary>
+            [必填] 固定為 box
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.layout">
+            <summary>
+            [必填] The layout style of components in this box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.contents">
+            <summary>
+            [必填] Models.Flex.Components
+                   Components in this box. Here are the types of components available:
+                   * When the layout property is horizontal or vertical: box, button, image, text, separator, filler, and spacer (not recommended)
+                   * When the layout property is baseline: icon, text, filler, and spacer (not recommended)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.backgroundColor">
+            <summary>
+            [選填] Background color of the block. Use a hexadecimal color code. (Example:#RRGGBBAA). The default value is #00000000.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.borderColor">
+            <summary>
+            [選填] Color of box border. Use a hexadecimal color code.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.borderWidth">
+            <summary>
+            [選填] Width of box border.
+                   You can specify a value in pixels or any one of none, light, normal, medium, semi-bold, or bold.
+                   none does not render a border while the others become wider in the order of listing.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.cornerRadius">
+            <summary>
+            [選填] Radius at the time of rounding the corners of the border.
+                   You can specify a value in pixels or any one of none, xs, sm, md, lg, xl, or xxl.
+                   none does not round the corner while the others increase in radius in the order of listing.
+                   The default value is none.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.width">
+            <summary>
+            [選填] Width of the box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.height">
+            <summary>
+            [選填] Height of the box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.flex">
+            <summary>
+            [選填] The ratio of the width or height of this component within the parent box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.spacing">
+            <summary>
+            [選填] Minimum space between components in this box. The default value is none.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.margin">
+            <summary>
+            [選填] Minimum space between this component and the previous component in the parent element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.paddingAll">
+            <summary>
+            [選填] Free space between the borders of this box and the child element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.paddingTop">
+            <summary>
+            [選填] Free space between the border at the upper end of this box and the upper end of the child element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.paddingBottom">
+            <summary>
+            [選填] Free space between the border at the lower end of this box and the lower end of the child element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.paddingStart">
+            <summary>
+            [選填] Free space between the border at the left end of this box and the left end of the child element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.paddingEnd">
+            <summary>
+            [選填] Free space between the border at the right end of this box and the right end of the child element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.position">
+            <summary>
+            [選填] Reference position for placing this box.
+                   Specify one of the following values:
+                   * relative: Use the previous box as reference.
+                   * absolute: Use the top left of parent element as reference.
+                   The default value is relative.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.offsetTop">
+            <summary>
+            [選填] The top offset. 
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.offsetBottom">
+            <summary>
+            [選填] The bottom offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.offsetStart">
+            <summary>
+            [選填] The left offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.offsetEnd">
+            <summary>
+            [選填] The right offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.BoxModel.action">
+            <summary>
+            [選填] Models.Action
+                   Action performed when this image is tapped. Specify an action object. This property is supported on the following versions of LINE.
+                   LINE for iOS and Android: 8.11.0 and later
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel">
+            <summary>
+            This component renders a button. When the user taps a button, a specified action is performed.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.type">
+            <summary>
+            [必填] 固定為 button
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.action">
+            <summary>
+            [必填] Models.Action
+                   Action performed when this button is tapped.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.flex">
+            <summary>
+            [選填] The ratio of the width or height of this component within the parent box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.margin">
+            <summary>
+            [選填] Minimum space between this component and the previous component in the parent element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.position">
+            <summary>
+            [選填] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
+                   Specify one of the following values:
+                   * relative: Use the previous box as reference.
+                   * absolute: Use the top left of parent element as reference.
+                   The default value is relative.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.offsetTop">
+            <summary>
+            [選填] The top offset. 
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.offsetBottom">
+            <summary>
+            [選填] The bottom offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.offsetStart">
+            <summary>
+            [選填] The left offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.offsetEnd">
+            <summary>
+            [選填] The right offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.height">
+            <summary>
+            [選填] Height of the button.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.style">
+            <summary>
+            [選填] Style of the button. Specify one of the following values:
+                    * primary: Style for dark color buttons
+                    * secondary: Style for light color buttons
+                    * link: HTML link style
+                   The default value is link.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.color">
+            <summary>
+            [選填] Character color when the style property is link.
+                   Background color when the style property is primary or secondary.
+                   Use a hexadecimal color code.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ButtonModel.gravity">
+            <summary>
+            [選填] Alignment style in vertical direction.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.FillerModel">
+            <summary>
+            This component is used to create a space.
+            You can put a space between, before, or after components by inserting a filler anywhere within a box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.FillerModel.type">
+            <summary>
+            [必填] 固定為 filler
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.FillerModel.flex">
+            <summary>
+            [選填] The ratio of the width or height of this component within the parent box.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.IconModel">
+            <summary>
+            This component renders an icon for decorating the adjacent text.
+            This component can be used only in a baseline box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.type">
+            <summary>
+            [必填] 固定為 icon
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.url">
+            <summary>
+            [必填] Image URL
+                   Protocol: HTTPS
+                   Image format: JPEG or PNG
+                   Maximum image size: 1024×1024 pixels
+                   Maximum data size: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.margin">
+            <summary>
+            [選填] Minimum space between this component and the previous component in the parent element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.position">
+            <summary>
+            [選填] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
+                   Specify one of the following values:
+                   * relative: Use the previous box as reference.
+                   * absolute: Use the top left of parent element as reference.
+                   The default value is relative.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.offsetTop">
+            <summary>
+            [選填] The top offset. 
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.offsetBottom">
+            <summary>
+            [選填] The bottom offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.offsetStart">
+            <summary>
+            [選填] The left offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.offsetEnd">
+            <summary>
+            [選填] The right offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.size">
+            <summary>
+            [選填] Maximum size of the icon width.
+                   You can specify one of the following values: xxs, xs, sm, md, lg, xl, xxl, 3xl, 4xl, or 5xl.
+                   The size increases in the order of listing.
+                   The default value is md.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.IconModel.aspectRatio">
+            <summary>
+            [選填] Aspect ratio of the icon.
+                   {width}:{height} format.
+                   Specify the value of {width} and {height} in the range from 1 to 100000.
+                   However, you cannot set {height} to a value that is more than three times the value of {width}.
+                   The default value is 1:1.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.ImageModel">
+            <summary>
+            This component renders an image.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.type">
+            <summary>
+            [必填] 固定為 image
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.url">
+            <summary>
+            [必填] Image URL
+                   Protocol: HTTPS
+                   Image format: JPEG or PNG
+                   Maximum image size: 1024×1024 pixels
+                   Maximum data size: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.flex">
+            <summary>
+            [選填] The ratio of the width or height of this component within the parent box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.margin">
+            <summary>
+            [選填] Minimum space between this component and the previous component in the parent element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.position">
+            <summary>
+            [選填] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
+                   Specify one of the following values:
+                   * relative: Use the previous box as reference.
+                   * absolute: Use the top left of parent element as reference.
+                   The default value is relative.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.offsetTop">
+            <summary>
+            [選填] The top offset. 
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.offsetBottom">
+            <summary>
+            [選填] The bottom offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.offsetStart">
+            <summary>
+            [選填] The left offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.offsetEnd">
+            <summary>
+            [選填] The right offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.align">
+            <summary>
+            [選填] Alignment style in horizontal direction.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.gravity">
+            <summary>
+            [選填] Alignment style in vertical direction.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.size">
+            <summary>
+            [選填] Maximum size of the image width.
+                   You can specify one of the following values: xxs, xs, sm, md, lg, xl, xxl, 3xl, 4xl, 5xl, or full.
+                   The size increases in the order of listing.
+                   The default value is md.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.aspectRatio">
+            <summary>
+            [選填] Aspect ratio of the image.
+                   {width}:{height} format.
+                   Specify the value of {width} and {height} in the range from 1 to 100000.
+                   However, you cannot set {height} to a value that is more than three times the value of {width}.
+                   The default value is 1:1.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.aspectMode">
+            <summary>
+            [選填] The display style of the image if the aspect ratio of the image and that specified by the aspectRatio property do not match.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.backgroundColor">
+            <summary>
+            [選填] Background color of the block. Use a hexadecimal color code. (Example:#RRGGBBAA).
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.ImageModel.action">
+            <summary>
+            [選填] Models.Action
+                   Action performed when this image is tapped. Specify an action object. This property is supported on the following versions of LINE.
+                   LINE for iOS and Android: 8.11.0 and later
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.SeparatorModel">
+            <summary>
+            This component renders a separating line within a box.
+            A vertical line will be rendered in a horizontal box and a horizontal line will be rendered in a vertical box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SeparatorModel.type">
+            <summary>
+            [必填] 固定為 separator
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SeparatorModel.margin">
+            <summary>
+            [選填] Minimum space between this component and the previous component in the parent element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SeparatorModel.color">
+            <summary>
+            [選填] Font color. Use a hexadecimal color code.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.SpanModel">
+            <summary>
+            This component renders multiple text strings with different designs in one row.
+            You can specify the color, size, weight, and decoration for the font.
+            Span is set to contents property in Text.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SpanModel.type">
+            <summary>
+            [必填] 固定為 span
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SpanModel.text">
+            <summary>
+            [必填] Text. If the wrap property of the parent text is set to true, you can use a new line character (\n) to begin on a new line.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SpanModel.color">
+            <summary>
+            [選填] Font color. Use a hexadecimal color code.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SpanModel.size">
+            <summary>
+            [選填] Font size.
+                   You can specify one of the following values: xxs, xs, sm, md, lg, xl, xxl, 3xl, 4xl, or 5xl.
+                   The size increases in the order of listing.
+                   The default value is md.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SpanModel.weight">
+            <summary>
+            [選填] Font weight. You can specify one of the following values: regular or bold.
+                   Specifying bold makes the font bold. The default value is regular.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SpanModel.style">
+            <summary>
+            [選填] Style of the text. Specify one of the following values:
+                    * normal: Normal
+                    * italic: Italic
+                   The default value is normal.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.SpanModel.decoration">
+            <summary>
+            [選填] Decoration of the text. Specify one of the following values:
+                    * none: No decoration
+                    * underline: Underline
+                    * line-through: Strikethrough
+                   The default value is none.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Component.TextModel">
+            <summary>
+            This component renders a text string in one row. You can specify font color, size, and weight.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.type">
+            <summary>
+            [必填] 固定為 text
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.text">
+            <summary>
+            [必填] Text Be sure to set either one of the text property or contents property.
+                   If you set the contents property, text is ignored.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.contents">
+            <summary>
+            [選填] Array of spans. Be sure to set either one of the text property or contents property.
+                   If you set the contents property, text is ignored.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.flex">
+            <summary>
+            [選填] The ratio of the width or height of this component within the parent box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.margin">
+            <summary>
+            [選填] Minimum space between this component and the previous component in the parent element.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.position">
+            <summary>
+            [選填] Reference for offsetTop, offsetBottom, offsetStart, and offsetEnd.
+                   Specify one of the following values:
+                   * relative: Use the previous box as reference.
+                   * absolute: Use the top left of parent element as reference.
+                   The default value is relative.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.offsetTop">
+            <summary>
+            [選填] The top offset. 
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.offsetBottom">
+            <summary>
+            [選填] The bottom offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.offsetStart">
+            <summary>
+            [選填] The left offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.offsetEnd">
+            <summary>
+            [選填] The right offset.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.size">
+            <summary>
+            [選填] Font size.
+                   You can specify one of the following values: xxs, xs, sm, md, lg, xl, xxl, 3xl, 4xl, or 5xl.
+                   The size increases in the order of listing.
+                   The default value is md.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.align">
+            <summary>
+            [選填] Alignment style in horizontal direction.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.gravity">
+            <summary>
+            [選填] Alignment style in vertical direction.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.wrap">
+            <summary>
+            [選填] true to wrap text. The default value is false.
+                   If set to true, you can use a new line character (\n) to begin on a new line.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.maxLines">
+            <summary>
+            [選填] Max number of lines. If the text does not fit in the specified number of lines, an ellipsis (…) is displayed at the end of the last line.
+                   If set to 0, all the text is displayed. The default value is 0. This property is supported on the following versions of LINE.
+                   LINE for iOS and Android: 8.11.0 and later
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.weight">
+            <summary>
+            [選填] Font weight. You can specify one of the following values: regular or bold.
+                   Specifying bold makes the font bold. The default value is regular.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.color">
+            <summary>
+            [選填] Font color. Use a hexadecimal color code.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.action">
+            <summary>
+            [選填] Models.Action
+                   Action performed when this image is tapped.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.style">
+            <summary>
+            [選填] Style of the text. Specify one of the following values:
+                    * normal: Normal
+                    * italic: Italic
+                   The default value is normal.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Component.TextModel.decoration">
+            <summary>
+            [選填] Decoration of the text. Specify one of the following values:
+                    * none: No decoration
+                    * underline: Underline
+                    * line-through: Strikethrough
+                   The default value is none.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel">
+            <summary>
+            This is a container that contains one message bubble. It can contain four blocks: header, hero, body, and footer. For more information about using each block, see Block in the API documentation.
+            The maximum size of JSON data that defines a bubble is 10 KB.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.type">
+            <summary>
+            [必填] 固定為 bubble
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.size">
+            <summary>
+            [選填] The size of the bubble. You can specify one of the following values: nano, micro, kilo, mega, or giga. The default value is mega.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.direction">
+            <summary>
+            [選填] Text directionality and the direction of placement of components in horizontal boxes. Specify one of the following values:
+                    * ltr: The text is left-to-right horizontal writing, and the components are placed from left to right
+                    * rtl: The text is right-to-left horizontal writing, and the components are placed from right to left
+                   The default value is ltr.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.header">
+            <summary>
+            [選填] Header block. Specify a Box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.hero">
+            <summary>
+            [選填] Model.Flex.Component(BoxModel / ImageModel) 
+                   Hero block. Specify a box or an image.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.body">
+            <summary>
+            [選填] Body block. Specify a Box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.footer">
+            <summary>
+            [選填] Footer block. Specify a Box.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.styles">
+            <summary>
+            [選填] Style of each block. Specify a bubble style.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.BubbleModel.action">
+            <summary>
+            [選填] Model.Action
+                   Action performed when this image is tapped. Specify an action object. This property is supported on the following versions of LINE.
+                   LINE for iOS and Android: 8.11.0 and later
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Flex.Container.CarouselModel">
+            <summary>
+            A carousel is a container that contains multiple bubbles as child elements. Users can scroll horizontally through the bubbles.
+            The maximum size of JSON data that defines a carousel is 50 KB.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.CarouselModel.type">
+            <summary>
+            [必填] 固定為 carousel
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Flex.Container.CarouselModel.contents">
+            <summary>
+            [必填] Bubbles in the carousel. Max: 10 bubbles
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.ImagemapMessageModel">
+            <summary>
+            Imagemap messages are messages configured with an image that has multiple tappable areas.
+            You can assign one tappable area for the entire image or different tappable areas on divided areas of the image.
+            You can also play a video on the image and display a label with a hyperlink after the video is finished.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImagemapMessageModel.type">
+            <summary>
+            [必填] 固定為 imagemap
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImagemapMessageModel.baseUrl">
+            <summary>
+            [必填] Base URL of the image
+            Max: 1000 characters
+            HTTPS over TLS 1.2 or later
+            For more information about supported images in imagemap messages, see How to configure an image.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImagemapMessageModel.altText">
+            <summary>
+            [必填] Alternative text
+            Max: 400 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImagemapMessageModel.baseSize">
+            <summary>
+            [必填] ImagemapBaseSizeModel
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImagemapMessageModel.video">
+            <summary>
+            video.area is required if you set a video to play on the imagemap.
+            video.externalLink is required if you set a video to play and a label to display after the video on the imagemap.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImagemapMessageModel.actions">
+            <summary>
+            [必填] Action when tapped
+            Max: 50
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapMessageActionModel.type">
+            <summary>
+            [必填] 固定為 message
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapMessageActionModel.label">
+            <summary>
+            [選填] Label for the action. Spoken when the accessibility feature is enabled on the client device.
+            Max: 50 characters
+            Supported on LINE 8.2.0 and later for iOS.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapMessageActionModel.text">
+            <summary>
+            [必填] Message to send
+            Max: 400 characters
+            Supported on LINE for iOS and Android only.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapMessageActionModel.area">
+            <summary>
+            [必填] Defined tappable area
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapUriActionModel">
+            <summary>
+            Object which specifies the actions and tappable areas of an imagemap.
+            When an area is tapped, the user is redirected to the URI specified in uri and the message specified in message is sent.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapUriActionModel.type">
+            <summary>
+            [必填] 固定為 uri
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapUriActionModel.label">
+            <summary>
+            [選填] Label for the action. Spoken when the accessibility feature is enabled on the client device.
+            Max: 50 characters
+            Supported on LINE 8.2.0 and later for iOS.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapUriActionModel.linkUri">
+            <summary>
+            [必填] Webpage URL
+            Max: 1000 characters
+            The available schemes are http, https, line, and tel. For more information about the LINE URL scheme, see Using the LINE URL scheme.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.Action.ImagemapUriActionModel.area">
+            <summary>
+            [必填] Defined tappable area
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapAreaModel.x">
+            <summary>
+            Horizontal position relative to the left edge of the area. Value must be 0 or higher.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapAreaModel.y">
+            <summary>
+            Vertical position relative to the top of the area. Value must be 0 or higher.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapAreaModel.width">
+            <summary>
+            Width of the tappable area
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapAreaModel.height">
+            <summary>
+            Height of the tappable area
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapBaseSizeModel.width">
+            <summary>
+            Width of base image in pixels. Set to 1040.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapBaseSizeModel.height">
+            <summary>
+            Height of base image. Set to the height that corresponds to a width of 1040 pixels.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapExternalLinkModel.linkUri">
+            <summary>
+            Webpage URL. Called when the label displayed after the video is tapped.
+            Max: 1000 characters
+            The available schemes are http, https, line, and tel. For more information about the LINE URL scheme, see Using the LINE URL scheme.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapExternalLinkModel.label">
+            <summary>
+            Label. Displayed after the video is finished.
+            Max: 30 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapVideoModel.originalContentUrl">
+            <summary>
+            URL of the video file (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            mp4
+            Max: 1 minute
+            Max: 10 MB
+            Note: A very wide or tall video may be cropped when played in some environments.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Imagemap.ImagemapVideoModel.previewImageUrl">
+            <summary>
+            URL of the preview image (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            JPEG
+            Max: 240 x 240 pixels
+            Max: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImageMessageModel.type">
+            <summary>
+            [必填] 固定為 image
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImageMessageModel.originalContentUrl">
+            <summary>
+            [必填] Image URL (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            JPEG
+            Max: 4096 x 4096
+            Max: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.ImageMessageModel.previewImageUrl">
+            <summary>
+            [必填] Preview image URL (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            JPEG
+            Max: 240 x 240
+            Max: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.LocationMessageModel.type">
+            <summary>
+            [必填] 固定為 location
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.LocationMessageModel.title">
+            <summary>
+            [必填] Title
+            Max: 100 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.LocationMessageModel.address">
+            <summary>
+            [必填] Address
+            Max: 100 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.LocationMessageModel.latitude">
+            <summary>
+            [必填] Latitude
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.LocationMessageModel.longtitude">
+            <summary>
+            [必填] Longitude
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.QuickReply.QuickReplyItemModel">
+            <summary>
+            This is a quick reply option that is displayed as a button.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.QuickReply.QuickReplyItemModel.type">
+            <summary>
+            [必填] 固定為 action
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.QuickReply.QuickReplyItemModel.imageUrl">
+            <summary>
+            URL of the icon that is displayed at the beginning of the button
+            Max: 1000 characters
+            URL scheme: https
+            Image format: PNG
+            Aspect ratio: 1:1
+            Data size: Up to 1 MB
+            There is no limit on the image size.
+            If the action property has a camera action, camera roll action, or location action, and the imageUrl property is not set, the default icon is displayed.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.QuickReply.QuickReplyItemModel.action">
+            <summary>
+            Action performed when this button is tapped. Specify an action object. The following is a list of the available actions:
+            Postback action
+            Message action
+            Datetime picker action
+            Camera action
+            Camera roll action
+            Location action
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.QuickReply.QuickReplyModel">
+            <summary>
+            This is a container that contains quick reply buttons.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.StickerMessageModel.type">
+            <summary>
+            [必填] 固定為 sticker
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.StickerMessageModel.packageId">
+            <summary>
+            [必填] Package ID for a set of stickers.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.StickerMessageModel.stickerId">
+            <summary>
+            [必填] Sticker ID.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.TemplateMessageModel">
+            <summary>
+            The following properties are common to all template message objects.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.TemplateMessageModel.type">
+            <summary>
+            [必填] 固定為 template
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.TemplateMessageModel.altText">
+            <summary>
+            [必填] Alternative text.
+            Max: 400 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.TemplateMessageModel.template">
+            <summary>
+            [必填] A Buttons, Confirm, Carousel, or Image Carousel object.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel">
+            <summary>
+            Template with an image, title, text, and multiple action buttons.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.type">
+            <summary>
+            [必填] 固定為 buttons
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.thumbnailImageUrl">
+            <summary>
+            [選填] Image URL (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            JPEG or PNG
+            Max width: 1024px
+            Max: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.imageAspectRatio">
+            <summary>
+            [選填] Aspect ratio of the image. Specify one of the following values:
+            rectangle: 1.51:1
+            square: 1:1
+            The default value is rectangle.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.imageSize">
+            <summary>
+            [選填] Size of the image. Specify one of the following values:
+            cover: The image fills the entire image area. Parts of the image that do not fit in the area are not displayed.
+            contain: The entire image is displayed in the image area. A background is displayed in the unused areas to the left and right of vertical images and in the areas above and below horizontal images.
+            The default value is cover.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.imageBackgroundColor">
+            <summary>
+            [選填] Background color of image. Specify a RGB color value. The default value is #FFFFFF (white).
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.title">
+            <summary>
+            [選填] Title
+            Max: 40 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.text">
+            <summary>
+            [必填] Message text
+            Max: 160 characters (no image or title)
+            Max: 60 characters (message with an image or title)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.defaultAction">
+            <summary>
+            [選填] Action when image is tapped; set for the entire image, title, and text area
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ButtonsTemplateModel.actions">
+            <summary>
+            [選填] Action when tapped
+            Max: 4
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselColumnModel.thumbnailImageUrl">
+            <summary>
+            [選填] Image URL (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            JPEG or PNG
+            Aspect ratio: 1:1.51
+            Max width: 1024px
+            Max: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselColumnModel.imageBackgroundColor">
+            <summary>
+            [選填] Background color of image. Specify a RGB color value. The default value is #FFFFFF (white).
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselColumnModel.title">
+            <summary>
+            [選填] Title
+            Max: 40 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselColumnModel.text">
+            <summary>
+            [必填] Message text
+            Max: 120 characters (no image or title)
+            Max: 60 characters (message with an image or title)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselColumnModel.defaultAction">
+            <summary>
+            [選填] Action when image is tapped; set for the entire image, title, and text area
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselColumnModel.actions">
+            <summary>
+            [必填] Action when tapped
+            Max: 3
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Template.CarouselTemplate">
+            <summary>
+            Template with multiple columns which can be cycled like a carousel. The columns will be shown in order by scrolling horizontally.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselTemplate.type">
+            <summary>
+            [必填] 固定為 carousel
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselTemplate.columns">
+            <summary>
+            [必填] Array of columns
+            Max: 10
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselTemplate.imageAspectRatio">
+            <summary>
+            [選填] Aspect ratio of the image. Specify one of the following values:
+            rectangle: 1.51:1
+            square: 1:1
+            The default value is rectangle.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.CarouselTemplate.imageSize">
+            <summary>
+            [選填] Size of the image. Specify one of the following values:
+            cover: The image fills the entire image area. Parts of the image that do not fit in the area are not displayed.
+            contain: The entire image is displayed in the image area. A background is displayed in the unused areas to the left and right of vertical images and in the areas above and below horizontal images.
+            The default value is cover.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Template.ConfirmTemplateModel">
+            <summary>
+            Template with two action buttons.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ConfirmTemplateModel.type">
+            <summary>
+            [必填] 固定為 confirm
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ConfirmTemplateModel.text">
+            <summary>
+            [必填] Message text
+            Max: 240 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ConfirmTemplateModel.actions">
+            <summary>
+            [必填] Action when tapped
+            Set 2 actions for the 2 buttons
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ImageCarouselColumnModel.imageUrl">
+            <summary>
+            Image URL (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            JPEG or PNG
+            Aspect ratio: 1:1
+            Max width: 1024px
+            Max: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ImageCarouselColumnModel.action">
+            <summary>
+            Action when image is tapped
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Message.Template.ImageCarouselTemplateModel">
+            <summary>
+            Template with multiple images which can be cycled like a carousel. The images will be shown in order by scrolling horizontally.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ImageCarouselTemplateModel.type">
+            <summary>
+            [必填] 固定為 image_carousel
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.Template.ImageCarouselTemplateModel.columns">
+            <summary>
+            [必填] Array of columns
+            Max: 10
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.TextMessageModel.type">
+            <summary>
+            [必填] 固定為 text
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.TextMessageModel.text">
+            <summary>
+            [必填] Message text. You can include the following emoji:
+                    * Unicode emoji
+                    * LINE original emoji (Unicode code point table for LINE original emoji)
+                   Max: 2000 characters
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.TextMessageModel.quickReply">
+            <summary>
+            [選填] Quick reply.
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.VideoMessageModel.type">
+            <summary>
+            [必填] 固定為 video
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.VideoMessageModel.originalContentUrl">
+            <summary>
+            [必填] URL of video file (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            mp4
+            Max: 1 minute
+            Max: 10 MB
+            A very wide or tall video may be cropped when played in some environments.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Message.VideoMessageModel.previewImageUrl">
+            <summary>
+            [必填] URL of preview image (Max: 1000 characters)
+            HTTPS over TLS 1.2 or later
+            JPEG
+            Max: 240 x 240
+            Max: 1 MB
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.MulticastModel.to">
+            <summary>
+            UserIds
+            Max: 150 user IDs
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.MulticastModel.messages">
+            <summary>
+            Model.Message
+            Max: 5
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Profile.MembersIdsResponseModel.memberIds">
+            <summary>
+            List of user IDs of members in the group or room.
+            Users of LINE version 7.4.x or earlier are not included in memberIds.
+            For more information, see User consent.
+            Max: 100 user IDs
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Profile.MembersIdsResponseModel.next">
+            <summary>
+            A continuation token to get the next array of user IDs of the members in the group or room.
+            Returned only when there are remaining user IDs that were not returned in memberIds in the original request.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Profile.UserProfileResponseModel">
+            <summary>
+            使用者個人資料
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Profile.UserProfileResponseModel.displayName">
+            <summary>
+            User's display name
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Profile.UserProfileResponseModel.userId">
+            <summary>
+            User ID
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Profile.UserProfileResponseModel.pictureUrl">
+            <summary>
+            Profile image URL. "https" image URL. Not included in the response if the user doesn't have a profile image.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Profile.UserProfileResponseModel.statusMessage">
+            <summary>
+            User's status message. Not included in the response if the user doesn't have a status message.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.PushMessageModel.to">
+            <summary>
+            單一 userId
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.PushMessageModel.messages">
+            <summary>
+            Model.Message
+            Max: 5
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.ReplyMessageModel.messages">
+            <summary>
+            Model.Message
+            Max: 5
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.AgeModel.age">
+            <summary>
+            Age group
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.AgeModel.percentage">
+            <summary>
+            Percentage
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.AppTypeModel.appType">
+            <summary>
+            OS
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.AppTypeModel.percentage">
+            <summary>
+            Percentage
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.AreaModel.area">
+            <summary>
+            Area
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.AreaModel.percentage">
+            <summary>
+            Percentage
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.Demographic.FriendDemographicsResponseModel">
+            <summary>
+            好友統計資料
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.FriendDemographicsResponseModel.genders">
+            <summary>
+            Percentage per gender
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.FriendDemographicsResponseModel.ages">
+            <summary>
+            Percentage per age group
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.FriendDemographicsResponseModel.areas">
+            <summary>
+            Percentage per area
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.FriendDemographicsResponseModel.appTypes">
+            <summary>
+            Percentage by OS
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.FriendDemographicsResponseModel.subscriptionPeriods">
+            <summary>
+            Percentage per friendship duration
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.GenderModel.gender">
+            <summary>
+            Gender
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.GenderModel.percentage">
+            <summary>
+            Percentage
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.SubscriptionPeriodModel.subscriptionPeriod">
+            <summary>
+            Friendship duration
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.Demographic.SubscriptionPeriodModel.percentage">
+            <summary>
+            Percentage
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.InteractionStatistics.ClickModel">
+            <summary>
+            Information about URLs in the message.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.ClickModel.seq">
+            <summary>
+            The URL's serial number.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.ClickModel.url">
+            <summary>
+            URL
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.ClickModel.click">
+            <summary>
+            Number of times the URL was opened.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.ClickModel.uniqueClick">
+            <summary>
+            Number of people that opened the URL.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.ClickModel.uniqueClickOfRequest">
+            <summary>
+            Number of people who opened this url through any link in the message.
+            If a message contains two links to the same URL and a user opens both links, they're counted only once.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel">
+            <summary>
+            Information about individual message bubbles.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.seq">
+            <summary>
+            Bubble's serial number.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.impression">
+            <summary>
+            Number of times the bubble was displayed.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.mediaPlayed">
+            <summary>
+            Number of times audio or video in the bubble started playing.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.mediaPlayed25Percent">
+            <summary>
+            Number of times audio or video in the bubble was played from start to 25%.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.mediaPlayed50Percent">
+            <summary>
+            Number of times audio or video in the bubble was played from start to 50%.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.mediaPlayed75Percent">
+            <summary>
+            Number of times audio or video in the bubble was played from start to 75%.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.mediaPlayed100Percent">
+            <summary>
+            Number of times audio or video in the bubble was played in its entirety.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.uniqueMediaPlayed">
+            <summary>
+            Number of people that started playing audio or video in the bubble.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.uniqueMediaPlayed25Percent">
+            <summary>
+            Number of people that played audio or video in the bubble from start to 25%.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.uniqueMediaPlayed50Percent">
+            <summary>
+            Number of people that played audio or video in the bubble from start to 50%.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.uniqueMediaPlayed75Percent">
+            <summary>
+            Number of people that played audio or video in the bubble from start to 75%.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.MessageModel.uniqueMediaPlayed100Percent">
+            <summary>
+            Number of people that played audio or video in the bubble in its entirety.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel">
+            <summary>
+            Summary of message statistics.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel.requestId">
+            <summary>
+            Request ID.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel.timestamp">
+            <summary>
+            UNIX timestamp for message delivery time.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel.delivered">
+            <summary>
+            Number of messages delivered. This property shows values of less than 20.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel.uniqueImpression">
+            <summary>
+            Number of people who opened the message, meaning they displayed at least 1 bubble.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel.uniqueClick">
+            <summary>
+            Number of people who opened any URL in the message.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel.uniqueMediaPlay">
+            <summary>
+            Number of people who started playing any video or audio in the message.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.OverviewModel.uniqueMediaPlay100Percent">
+            <summary>
+            Number of people who played the entirety of any video or audio in the message.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.InteractionStatistics.UserInteractionStatisticsResponseModel">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.UserInteractionStatisticsResponseModel.overview">
+            <summary>
+            Summary of message statistics.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.UserInteractionStatisticsResponseModel.messages">
+            <summary>
+            Array of information about individual message bubbles.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.InteractionStatistics.UserInteractionStatisticsResponseModel.clicks">
+            <summary>
+            Array of information about URLs in the message.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfFollowersResponseModel">
+            <summary>
+            好友統計資料
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfFollowersResponseModel.status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfFollowersResponseModel.followers">
+            <summary>
+            加入好友。此為您的帳號首次被用戶加入好友的次數，即使對方封鎖您的帳號或稍後刪除LINE帳號，此數值也不會降低。
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfFollowersResponseModel.targetedReaches">
+            <summary>
+            目標好友數。意指依性別、年齡及地區等屬性篩選好友後所得出可觸及的分眾訊息接收對象的母數，其包含經常使用LINE及LINE相關服務、且系統可高度精確地推測其屬性的好友。
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfFollowersResponseModel.blocks">
+            <summary>
+            封鎖。此為對方封鎖您的帳號時採計的數值；若對方解除封鎖您的帳號，此數值將會降低。
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfFollowersStatus">
+            <summary>
+            特定日期使用reply回覆訊息數量統計資料的處理狀態
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel">
+            <summary>
+            特定日期Line官方帳號回傳訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.status">
+            <summary>
+            狀態
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.broadcast">
+             <summary>
+            推送訊息給所有Line官方帳號朋友的數量（廣播消息）。
+             </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.targeting">
+            <summary>
+            根據特定屬性（targeted/segmented messages）發送給此LINE官方帳號某些朋友的推送消息數。
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.autoResponse">
+            <summary>
+            使用自動回覆發送訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.welcomeResponse">
+            <summary>
+            發送問候訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.chat">
+            <summary>
+            從LINE Official Account Manager Chat screen發送訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.apiBroadcast">
+            <summary>
+            使用Message API Broadcast發送訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.apiPush">
+            <summary>
+            使用Message API Push發送訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.apiMulticast">
+            <summary>
+            使用Message API Multicast發送訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesResponseModel.apiReply">
+            <summary>
+            使用Message API Reply發送訊息的數量
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfMessageDeliveriesStatus">
+            <summary>
+            特定日期使用reply回覆訊息數量統計資料的處理狀態
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfMessagesSentThisMonthResponseModel">
+            <summary>
+            本月發送訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfMessagesSentThisMonthResponseModel.totalUsage">
+            <summary>
+            使用量
+            </summary>
+            <value></value>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentBroadcastMessagesResponseModel">
+            <summary>
+            特定日期使用broadcast發送廣播訊息的數量(使用/bot/message/broadcast)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentBroadcastMessagesResponseModel.status">
+            <summary>
+            狀態:ready, unready, out_of_service
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentBroadcastMessagesResponseModel.success">
+            <summary>
+            status為ready時, 可取得特定日期使用broadcast群發訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentBroadcastMessagesResponseModel.message">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentBroadcastMessagesStatus">
+            <summary>
+            特定日期使用broadcast發送廣播訊息數量統計資料的處理狀態
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentMulticastMessagesResponseModel">
+            <summary>
+            特定日期使用multicast群發訊息的數量(使用/bot/message/multicast)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentMulticastMessagesResponseModel.status">
+            <summary>
+            狀態:ready, unready, out_of_service
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentMulticastMessagesResponseModel.success">
+            <summary>
+            status為ready時, 可取得特定日期使用multicast群發訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentMulticastMessagesResponseModel.message">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentMulticastMessagesStatus">
+            <summary>
+            特定日期使用multicast群發訊息數量統計資料的處理狀態
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentPushMessagesResponseModel">
+            <summary>
+            特定日期使用push推送訊息的數量(使用/bot/message/push)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentPushMessagesResponseModel.status">
+            <summary>
+            狀態:ready, unready, out_of_service
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentPushMessagesResponseModel.success">
+            <summary>
+            status為ready時, 可取得特定日期使用push推送訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentPushMessagesResponseModel.message">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentPushMessagesStatus">
+            <summary>
+            特定日期使用push推送訊息數量統計資料的處理狀態
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentReplyMessagesResponseModel">
+            <summary>
+            特定日期使用reply回覆訊息的數量(使用/bot/message/reply)
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentReplyMessagesResponseModel.status">
+            <summary>
+            狀態:ready, unready, out_of_service
+            </summary>
+            <value></value>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentReplyMessagesResponseModel.success">
+            <summary>
+            status為ready時, 可取得特定日期使用reply回覆訊息的數量
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.NumberOfSentReplyMessagesResponseModel.message">
+            <summary>
+            錯誤訊息
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.NumberOfSentReplyMessagesStatus">
+            <summary>
+            特定日期使用reply回覆訊息數量統計資料的處理狀態
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.TargetLimitForAdditionalMessagesResponseModel">
+            <summary>
+            Gets the target limit for additional messages in the current month.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.TargetLimitForAdditionalMessagesResponseModel.type">
+            <summary>
+            One of the following values to indicate whether a target limit is set or not.none. 
+            "none" This indicates that a target limit is not set.limited. 
+            "limited" This indicates that a target limit is set.
+            </summary>
+        </member>
+        <member name="P:LineMessagingAPI.Models.Response.TargetLimitForAdditionalMessagesResponseModel.value">
+            <summary>
+            The target limit for additional messages in the current month. This property is returned when the type property has a value of limited.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Models.Response.TargetLimitForAdditionalMessagesType">
+            <summary>
+            One of the following values to indicate whether a target limit is set or not.
+            </summary>
+        </member>
+        <member name="T:LineMessagingAPI.Utility">
+            <summary>
+            Line Messaging API HTTP發送工具
+            </summary>
+        </member>
+        <member name="M:LineMessagingAPI.Utility.DoLineHttpPostAsync(System.String,System.String,System.String)">
+            <summary>
+            用HTTP POST發出Messaging API
+            </summary>
+            <param name="url">API的URL</param>
+            <param name="jsonString">JSON字串</param>
+            <param name="accessToken">LINE AccessToken</param>
+        </member>
+        <member name="M:LineMessagingAPI.Utility.DoLineHttpGetAsync(System.String,System.String,System.String)">
+            <summary>
+            用HTTP GET發出Messaging API
+            </summary>
+            <param name="url">API的URL</param>
+            <param name="para">參數內容</param>
+            <param name="accessToken">LINE AccessToken</param>
+        </member>
+        <member name="T:LineMessagingAPI.WebhookRequestMessage">
+            <summary>
+            Line Webhook 請求訊息
+            </summary>
+        </member>
+        <member name="M:LineMessagingAPI.WebhookRequestMessage.GetWebhookEvent(Microsoft.AspNetCore.Http.HttpContext,System.String)">
+            <summary>
+            取得Line Webhook 事件
+            </summary>
+            <param name="httpContext">HttpContext</param>
+            <param name="channelSecret">Line ChannelSecret</param>
+            <returns></returns>
+        </member>
+        <member name="M:LineMessagingAPI.WebhookRequestMessage.VerifyXLineSignature(System.String,System.String,System.String)">
+            <summary>
+            驗證Signature
+            </summary>
+            <param name="requestBody">Body資料</param>
+            <param name="lineSignature">Header X-Line-Signature</param>
+            <param name="channelSecret">Line ChannelSecret</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
