@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Message
 {
+    /// <summary>
+    /// Send image message
+    /// </summary>
     public class ImageMessageModel : MessageModel
     {
         /// <summary>

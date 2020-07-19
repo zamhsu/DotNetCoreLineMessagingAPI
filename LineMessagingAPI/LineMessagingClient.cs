@@ -499,6 +499,7 @@ namespace LineMessagingAPI
             //Content-Type	image/jpeg or image/png
             string para = $"/{richMenuId}/content";
 
+            //https://api-data.line.me/v2/bot
             MessagingApiUrl.RichMenuUrl;
         }
 
@@ -525,7 +526,7 @@ namespace LineMessagingAPI
         /// Gets a rich menu via a rich menu ID.
         /// </summary>
         /// <param name="richMenuId">ID of a rich menu</param>
-        /// <param name="accessToken"></param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
         public async Task<RichMenuResponseModel> GetRichMenuAsync(string richMenuId, string accessToken)
         {
@@ -544,13 +545,14 @@ namespace LineMessagingAPI
         /// Deletes a rich menu.
         /// </summary>
         /// <param name="richMenuId">ID of a rich menu</param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
-        public async Task DeleteRichMenuAsync(string richMenuId)
+        public async Task DeleteRichMenuAsync(string richMenuId, string accessToken)
         {
             //DELETE
             string para = $"/{richMenuId}";
 
-            MessagingApiUrl.RichMenuUrl;
+            await Utility.DoLineHttpDeleteAsync(MessagingApiUrl.RichMenuUrl, para, accessToken);
         }
 
         /// <summary>
@@ -559,19 +561,21 @@ namespace LineMessagingAPI
         /// If a default rich menu has already been set, calling this endpoint replaces the current default rich menu with the one specified in your request.
         /// </summary>
         /// <param name="richMenuId">ID of a rich menu</param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
-        public async Task SetDefaultRichMenuAsync(string richMenuId)
+        public async Task SetDefaultRichMenuAsync(string richMenuId, string accessToken)
         {
             //POST
             string para = $"/all/richmenu/{richMenuId}";
+            string fullUrl = MessagingApiUrl.UserSettingUrl + para;
 
-            MessagingApiUrl.UserSettingUrl;
+            await Utility.DoLineHttpPostAsync(fullUrl, null, accessToken);
         }
 
         /// <summary>
         /// Gets the ID of the default rich menu set with the Messaging API.
         /// </summary>
-        /// <param name="accessToken"></param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
         public async Task<RichMenuResponseModel> GetDefaultRichMenuIDAsync(string accessToken)
         {
@@ -589,13 +593,14 @@ namespace LineMessagingAPI
         /// <summary>
         /// Cancels the default rich menu set with the Messaging API.
         /// </summary>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
-        public async Task CancelDefaultRichMenuAsync()
+        public async Task CancelDefaultRichMenuAsync(string accessToken)
         {
             //DELETE
             string para = $"/all/richmenu";
 
-            MessagingApiUrl.UserSettingUrl;
+            await Utility.DoLineHttpDeleteAsync(MessagingApiUrl.UserSettingUrl, para, accessToken);
         }
 
         /// <summary>
@@ -605,32 +610,39 @@ namespace LineMessagingAPI
         /// </summary>
         /// <param name="richMenuId">ID of a rich menu</param>
         /// <param name="userId">User ID. Found in the source object of webhook event objects. Do not use the LINE ID used in LINE.</param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
-        public async Task LinkRichMenuToUserAsync(string richMenuId,string userId)
+        public async Task LinkRichMenuToUserAsync(string richMenuId, string userId, string accessToken)
         {
             //POST
             string para = $"/{userId}/richmenu/{richMenuId}";
+            string fullUrl = MessagingApiUrl.UserSettingUrl + para;
 
-            MessagingApiUrl.UserSettingUrl;
+            await Utility.DoLineHttpPostAsync(fullUrl, null, accessToken);
         }
 
         /// <summary>
         /// Links a rich menu to multiple users.
         /// </summary>
+        /// <param name="bulkLinkRequestModel">RichMenuBulkLinkRequestModel</param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
-        public async Task LinkRichMenuToMultipleUsersAsync()
+        public async Task LinkRichMenuToMultipleUsersAsync(RichMenuBulkLinkRequestModel bulkLinkRequestModel, string accessToken)
         {
             //POST
             string para = $"/bulk/link";
+            string fullUrl = MessagingApiUrl.RichMenuUrl + para;
 
-            MessagingApiUrl.RichMenuUrl;
+            string jsonString = JsonConvert.SerializeObject(bulkLinkRequestModel);
+
+            await Utility.DoLineHttpPostAsync(fullUrl, jsonString, accessToken);
         }
 
         /// <summary>
         /// Gets the ID of the rich menu linked to a user.
         /// </summary>
         /// <param name="userId">User ID. Found in the source object of webhook event objects. Do not use the LINE ID used in LINE.</param>
-        /// <param name="accessToken"></param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
         public async Task<string> GetRichMenuIDOfUserAsync(string userId, string accessToken)
         {
@@ -649,26 +661,31 @@ namespace LineMessagingAPI
         /// Unlinks a rich menu from a user.
         /// </summary>
         /// <param name="userId">User ID. Found in the source object of webhook event objects. Do not use the LINE ID used in LINE.</param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
-        public async Task UnlinkRichMenuFromUserAsync(string userId)
+        public async Task UnlinkRichMenuFromUserAsync(string userId, string accessToken)
         {
             //DELETE
             string para = $"/{userId}/richMenu";
 
-            MessagingApiUrl.UserSettingUrl;
+            await Utility.DoLineHttpDeleteAsync(MessagingApiUrl.UserSettingUrl, para, accessToken);
         }
 
         /// <summary>
         /// Unlinks rich menus from multiple users.
         /// </summary>
         /// <param name="unlinkRequestModel">Array of user IDs. Found in the source object of webhook event objects. Do not use the LINE ID used in LINE.Max: 500 user IDs</param>
+        /// <param name="accessToken">LINE AccessToken</param>
         /// <returns></returns>
-        public async Task UnlinkRichMenusFromMultipleUsersAsync(RichMenuBulkUnlinkRequestModel unlinkRequestModel)
+        public async Task UnlinkRichMenusFromMultipleUsersAsync(RichMenuBulkUnlinkRequestModel unlinkRequestModel, string accessToken)
         {
             //POST
             string para = $"/bulk/unlink";
+            string fullUrl = MessagingApiUrl.RichMenuUrl + para;
 
-            MessagingApiUrl.RichMenuUrl;
+            string jsonString = JsonConvert.SerializeObject(unlinkRequestModel);
+
+            await Utility.DoLineHttpPostAsync(fullUrl, jsonString, accessToken);
         }
 
         #endregion

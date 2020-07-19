@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Message
 {
+    /// <summary>
+    /// Send video message
+    /// </summary>
     public class VideoMessageModel : MessageModel
     {
         /// <summary>

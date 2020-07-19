@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Message
 {
+    /// <summary>
+    /// Send Sticker message
+    /// </summary>
     public class StickerMessageModel : MessageModel
     {
         /// <summary>

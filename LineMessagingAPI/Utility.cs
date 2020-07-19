@@ -69,5 +69,35 @@ namespace LineMessagingAPI
 
             return result;
         }
+
+        /// <summary>
+        /// 用HTTP DELETE發出Messaging API
+        /// </summary>
+        /// <param name="url">API的URL</param>
+        /// <param name="para">參數內容</param>
+        /// <param name="accessToken">LINE AccessToken</param>
+        public static async Task<string> DoLineHttpDeleteAsync(string url, string para, string accessToken)
+        {
+            string result = null;
+            string fullUrl = url + para;
+
+            try
+            {
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+                HttpResponseMessage response = await httpClient.DeleteAsync(fullUrl);
+
+                result = await response.Content.ReadAsStringAsync();
+
+                response.Dispose();
+            }
+            catch (WebException ex)
+            {
+                throw new Exception("DoLineHttpPostAsync:" + ex.Message);
+            }
+
+            return result;
+        }
     }
 }

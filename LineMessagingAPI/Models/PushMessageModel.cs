@@ -3,6 +3,9 @@ using LineMessagingAPI.Models.Message;
 
 namespace LineMessagingAPI.Models
 {
+    /// <summary>
+    /// Send push message
+    /// </summary>
     public class PushMessageModel
     {
         /// <summary>

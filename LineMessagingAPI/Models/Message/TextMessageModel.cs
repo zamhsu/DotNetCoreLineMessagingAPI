@@ -2,6 +2,9 @@ using LineMessagingAPI.Models.Message.QuickReply;
 
 namespace LineMessagingAPI.Models.Message
 {
+    /// <summary>
+    /// Send text message
+    /// </summary>
     public class TextMessageModel : MessageModel
     {
         /// <summary>

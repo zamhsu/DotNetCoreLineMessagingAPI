@@ -1,5 +1,8 @@
 namespace LineMessagingAPI.Models.Message
 {
+    /// <summary>
+    /// Send location message
+    /// </summary>
     public class LocationMessageModel : MessageModel
     {
         /// <summary>
