@@ -7,6 +7,11 @@ namespace LineMessagingAPI.Models.ManageAudience.Request
     public class RenameAnAudienceRequestModel
     {
         /// <summary>
+        /// [Required] The audience ID.
+        /// </summary>
+        public long audienceGroupId { get; set; }
+
+        /// <summary>
         /// [Required] The audience's name. Audience names must be unique.
         /// This is case-insensitive, meaning AUDIENCE and audience are considered identical.
         /// Max character limit: 120

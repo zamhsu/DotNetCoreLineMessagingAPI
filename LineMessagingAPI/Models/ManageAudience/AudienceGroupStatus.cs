@@ -10,6 +10,10 @@ namespace LineMessagingAPI.Models.ManageAudience
     public enum AudienceGroupStatus
     {
         /// <summary>
+        /// An unknown status.
+        /// </summary>
+        UNKNOWN,
+        /// <summary>
         /// Pending. It may take several hours for the status to change to READY.
         /// </summary>
         IN_PROGRESS,

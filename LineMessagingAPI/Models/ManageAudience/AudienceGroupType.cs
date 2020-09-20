@@ -12,6 +12,10 @@ namespace LineMessagingAPI.Models.ManageAudience
     public enum AudienceGroupType
     {
         /// <summary>
+        /// An unknown type.
+        /// </summary>
+        UNKNOWN,
+        /// <summary>
         /// An audience used for uploading user IDs.
         /// </summary>
         UPLOAD,

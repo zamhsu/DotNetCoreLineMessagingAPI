@@ -71,6 +71,37 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
+        /// 用HTTP PUT發出Messaging API
+        /// </summary>
+        /// <param name="url">API的URL</param>
+        /// <param name="jsonString">JSON字串</param>
+        /// <param name="accessToken">LINE AccessToken</param>
+        public static async Task<string> DoLineHttpPutAsync(string url, string jsonString, string accessToken)
+        {
+            string result = null;
+
+            try
+            {
+                httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+
+                HttpContent content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await httpClient.PutAsync(url, content);
+
+                result = await response.Content.ReadAsStringAsync();
+
+                response.Dispose();
+            }
+            catch (WebException ex)
+            {
+                throw new Exception("DoLineHttpPostAsync:" + ex.Message);
+            }
+
+            return result;
+        }
+
+        /// <summary>
         /// 用HTTP DELETE發出Messaging API
         /// </summary>
         /// <param name="url">API的URL</param>

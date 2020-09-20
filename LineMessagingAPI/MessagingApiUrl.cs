@@ -6,7 +6,7 @@ namespace LineMessagingAPI
     public class MessagingApiUrl
     {
         /// <summary>
-        /// Message相關API(HTTP GET / HTTP POST)
+        /// Message相關API
         /// </summary>
         public static string MessageUrl
         {
@@ -17,7 +17,7 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
-        /// 回覆訊息(HTTP POST)
+        /// 回覆訊息
         /// </summary>
         public static string ReplyUrl
         {
@@ -28,7 +28,7 @@ namespace LineMessagingAPI
         }
         
         /// <summary>
-        /// 推送訊息(HTTP POST)
+        /// 推送訊息
         /// </summary>
         public static string PushUrl
         {
@@ -39,7 +39,7 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
-        /// 群發訊息(HTTP POST)
+        /// 群發訊息
         /// </summary>
         public static string MulticastUrl
         {
@@ -50,7 +50,7 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
-        /// 廣播訊息(HTTP POST)
+        /// 廣播訊息
         /// </summary>
         public static string BroadcastUrl
         {
@@ -61,7 +61,7 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
-        /// 取得訊息內容(HTTP GET)
+        /// 取得訊息內容
         /// </summary>
         public static string MessageContentUrl
         {
@@ -72,7 +72,7 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
-        /// 取得統計資料(HTTP GET)
+        /// 取得統計資料
         /// </summary>
         public static string InsightUrl
         {
@@ -83,7 +83,7 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
-        /// 取得個人資料(HTTP GET)
+        /// 取得個人資料
         /// </summary>
         public static string ProfileUrl
         {
@@ -94,7 +94,7 @@ namespace LineMessagingAPI
         }
 
         /// <summary>
-        /// 取得聊天室資料(HTTP GET)
+        /// 取得聊天室資料
         /// </summary>
         public static string RoomUrl
         {
@@ -105,7 +105,7 @@ namespace LineMessagingAPI
         }
         
         /// <summary>
-        /// 取得群組資料(HTTP GET)
+        /// 取得群組資料
         /// </summary>
         /// <value></value>
         public static string GroupUrl
@@ -137,6 +137,17 @@ namespace LineMessagingAPI
             get
             {
                 return "https://api.line.me/v2/bot/user";
+            }
+        }
+
+        /// <summary>
+        /// Manage Audience相關API
+        /// </summary>
+        public static string AudienceGroupUrl
+        {
+            get
+            {
+                return "https://api.line.me/v2/bot/audienceGroup";
             }
         }
     }

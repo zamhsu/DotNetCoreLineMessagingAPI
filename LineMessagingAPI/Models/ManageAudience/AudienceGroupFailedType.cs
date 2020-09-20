@@ -10,6 +10,10 @@ namespace LineMessagingAPI.Models.ManageAudience
     public enum AudienceGroupFailedType
     {
         /// <summary>
+        /// An unknown type.
+        /// </summary>
+        UNKNOWN,
+        /// <summary>
         /// There weren't enough accounts in the audience that could be used as recipients (at least 100 are needed).
         /// </summary>
         AUDIENCE_GROUP_AUDIENCE_INSUFFICIENT,

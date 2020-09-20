@@ -10,6 +10,10 @@ namespace LineMessagingAPI.Models.ManageAudience
     public enum AudienceGroupJobType
     {
         /// <summary>
+        /// An unknown type.
+        /// </summary>
+        UNKNOWN,
+        /// <summary>
         /// Indicates that a user ID or IFA was added via the Messaging API.
         /// </summary>
         DIFF_ADD
