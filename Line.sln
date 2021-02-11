@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineMessagingAPI", "LineMessagingAPI\LineMessagingAPI.csproj", "{C7751AC0-8980-4656-8728-5401E213E869}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LineMessagingAPI", "LineMessagingAPI\LineMessagingAPI.csproj", "{C7751AC0-8980-4656-8728-5401E213E869}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LineBotSample", "LineBotSample\LineBotSample.csproj", "{61BF88D4-9C2C-443F-8DC3-F120BE1DA1B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C7751AC0-8980-4656-8728-5401E213E869}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C7751AC0-8980-4656-8728-5401E213E869}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C7751AC0-8980-4656-8728-5401E213E869}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61BF88D4-9C2C-443F-8DC3-F120BE1DA1B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61BF88D4-9C2C-443F-8DC3-F120BE1DA1B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61BF88D4-9C2C-443F-8DC3-F120BE1DA1B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61BF88D4-9C2C-443F-8DC3-F120BE1DA1B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
