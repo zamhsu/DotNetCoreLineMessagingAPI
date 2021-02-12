@@ -8,7 +8,7 @@ using LineMessagingAPI.Models.Message;
 using Newtonsoft.Json;
 using LineMessagingAPI;
 
-namespace LineChatBot.EventTypesProcessor
+namespace LineChatBot.Utilities.EventTypes
 {
     /// <summary>
     /// Message Event 處理器
